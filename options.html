@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Webflow日本語化 拡張機能 設定</title>
-  <!-- utils.jsを先に読み込む（options.jsが利用するため） -->
-  <script src="utils.js"></script>
+  <!-- 翻訳エンジンのモジュールを先に読み込む（options.jsが利用するため） -->
+  <script src="src/constants.js"></script>
+  <script src="src/csv.js"></script>
+  <script src="src/translator.js"></script>
   <!-- options.jsを読み込む -->
   <script src="options.js" defer></script>
 </head>
@@ -43,6 +45,7 @@
   </div>
   <div id="untranslated-container"></div>
 
+  <h2>用語集 <span id="term-count" style="font-size:14px;color:#666;"></span></h2>
   <!-- 用語集テーブルはJSで追加 -->
 </body>
 </html> 

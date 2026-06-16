@@ -42,7 +42,7 @@ Close,閉じる
 Next,次へ
 Previous,前へ
 Back,戻る
-Confirm,確認 
+Confirm,確認
 Style selector,スタイルセレクタ
 Inheriting 1 selector,1つのセレクタを継承中
 Inheriting,継承中
@@ -524,9 +524,7 @@ Use secure frame headers,セキュアフレームヘッダーを使用
 Custom SSL certificates,カスタムSSL証明書
 Add certificate,証明書を追加
 Site Access,サイトアクセス
-Publishing,公開設定
 Forms,フォーム
-Fonts,フォント
 Backups,バックアップ
 Integrations,連携
 Custom Code,カスタムコード
@@ -637,13 +635,11 @@ Open Editor,エディターを開く
 Edit site,サイトを編集
 Edit settings,設定を編集
 Site Settings,サイト設定
-Site settings,サイト設定
 Project Settings,プロジェクト設定
 Project settings,プロジェクト設定
 Workspace Settings,ワークスペース設定
 Workspace settings,ワークスペース設定
 Account Settings,アカウント設定
-Account settings,アカウント設定
 General Settings,一般設定
 General settings,一般設定
 SEO Settings,SEO設定
@@ -673,7 +669,6 @@ Search Engine Indexing,検索エンジンインデックス
 Enable indexing,インデックスを有効化
 Disable indexing,インデックスを無効化
 Sitemap Settings,サイトマップ設定
-Custom Code,カスタムコード
 Head Code,ヘッドコード
 Footer Code,フッターコード
 Before body tag,bodyタグの前
@@ -695,7 +690,6 @@ Error message,エラーメッセージ
 Redirect URL,リダイレクトURL
 Redirect url,リダイレクトURL
 Form Submissions,フォーム送信
-Form submissions,フォーム送信
 View submissions,送信を表示
 Export submissions,送信をエクスポート
 Delete submissions,送信を削除
@@ -742,21 +736,16 @@ Rich text,リッチテキスト
 Number,数値
 Phone,電話番号
 Email,メール
-Date,日付
 Date & Time,日時
 Date and Time,日時
 Switch,スイッチ
-Color,色
 File,ファイル
-Image,画像
 Video,動画
 Multi-Image,複数画像
 Multi-Reference,複数参照
 Reference,参照
 Option,オプション
 Multi-Select,複数選択
-User,ユーザー
-Users,ユーザー
 Members,メンバー
 Member,メンバー
 Visitor,訪問者
@@ -769,7 +758,6 @@ Editor,エディター
 Editors,エディター
 Collaborator,コラボレーター
 Collaborators,コラボレーター
-Owner,オーナー
 Owners,オーナー
 Invite Member,メンバーを招待
 Invite member,メンバーを招待
@@ -830,19 +818,16 @@ View Cart,カートを表示
 View cart,カートを表示
 Payment,支払い
 Payments,支払い
-Billing,請求
 Invoices,請求書
 Invoice,請求書
 Subscription,サブスクリプション
 Subscriptions,サブスクリプション
 Plan,プラン
-Plans,プラン
 Upgrade,アップグレード
 Downgrade,ダウングレード
 Cancel Subscription,サブスクリプションをキャンセル
 Cancel subscription,サブスクリプションをキャンセル
 Backup,バックアップ
-Backups,バックアップ
 Create Backup,バックアップを作成
 Create backup,バックアップを作成
 Restore Backup,バックアップを復元
@@ -856,12 +841,10 @@ Manual backup,手動バックアップ
 Version,バージョン
 Versions,バージョン
 Version History,バージョン履歴
-Version history,バージョン履歴
 Restore Version,バージョンを復元
 Restore version,バージョンを復元
 Compare Versions,バージョンを比較
 Compare versions,バージョンを比較
-Assets,アセット
 Asset,アセット
 Upload Asset,アセットをアップロード
 Upload asset,アセットをアップロード
@@ -878,18 +861,12 @@ File type,ファイルタイプ
 Dimensions,サイズ
 Alt Text,代替テキスト
 Alt text,代替テキスト
-Interactions,インタラクション
-Interaction,インタラクション
 Add Interaction,インタラクションを追加
 Add interaction,インタラクションを追加
 Edit Interaction,インタラクションを編集
 Edit interaction,インタラクションを編集
 Delete Interaction,インタラクションを削除
 Delete interaction,インタラクションを削除
-Trigger,トリガー
-Triggers,トリガー
-Animation,アニメーション
-Animations,アニメーション
 Mouse Click,マウスクリック
 Mouse click,マウスクリック
 Mouse Hover,マウスホバー
@@ -927,8 +904,6 @@ Bezier Curve,ベジェカーブ
 Bezier curve,ベジェカーブ
 Breakpoint,ブレークポイント
 Breakpoints,ブレークポイント
-Desktop,デスクトップ
-Tablet,タブレット
 Mobile Landscape,モバイル横向き
 Mobile landscape,モバイル横向き
 Mobile Portrait,モバイル縦向き
@@ -944,11 +919,9 @@ Show on,表示
 Hide on,非表示
 Visible on,表示
 Hidden on,非表示
-Responsive,レスポンシブ
 Responsive Settings,レスポンシブ設定
 Responsive settings,レスポンシブ設定
 Navbar,ナビバー
-Navigation,ナビゲーション
 Nav Menu,ナビメニュー
 Nav Link,ナビリンク
 Dropdown,ドロップダウン
@@ -988,7 +961,6 @@ H Flex,横フレックス
 Quick Stack,クイックスタック
 Columns,カラム
 Column,カラム
-Grid,グリッド
 Row,行
 Cell,セル
 Button,ボタン
@@ -1001,7 +973,6 @@ Text field,テキストフィールド
 Text Area,テキストエリア
 Text area,テキストエリア
 Textarea,テキストエリア
-Select,選択
 Select Field,選択フィールド
 Select field,選択フィールド
 Checkbox,チェックボックス
@@ -1018,7 +989,6 @@ Success State,成功状態
 Success state,成功状態
 Heading,見出し
 Headings,見出し
-Paragraph,段落
 Block Quote,引用
 Block quote,引用
 Blockquote,引用
@@ -1041,7 +1011,6 @@ Google Map,Googleマップ
 Google map,Googleマップ
 YouTube,YouTube
 Vimeo,Vimeo
-Video,動画
 Background Video,背景動画
 Background video,背景動画
 Lottie,Lottie
@@ -1056,22 +1025,15 @@ Unlink Symbol,シンボルのリンクを解除
 Unlink symbol,シンボルのリンクを解除
 Edit Symbol,シンボルを編集
 Edit symbol,シンボルを編集
-Component,コンポーネント
-Components,コンポーネント
 Create Component,コンポーネントを作成
-Create component,コンポーネントを作成
 Edit Component,コンポーネントを編集
 Edit component,コンポーネントを編集
 Unlink Component,コンポーネントのリンクを解除
 Unlink component,コンポーネントのリンクを解除
 Component Properties,コンポーネントプロパティ
 Component properties,コンポーネントプロパティ
-Property,プロパティ
-Properties,プロパティ
 Slot,スロット
 Slots,スロット
-Instance,インスタンス
-Instances,インスタンス
 Override,オーバーライド
 Overrides,オーバーライド
 Reset Override,オーバーライドをリセット
@@ -1107,8 +1069,6 @@ Placeholder State,プレースホルダー状態
 Placeholder state,プレースホルダー状態
 Empty State,空状態
 Empty state,空状態
-Error State,エラー状態
-Error state,エラー状態
 Tag,タグ
 Tags,タグ
 HTML Tag,HTMLタグ
@@ -1138,19 +1098,15 @@ Components Panel,コンポーネントパネル
 Components panel,コンポーネントパネル
 Symbols Panel,シンボルパネル
 Symbols panel,シンボルパネル
-Typography,タイポグラフィ
 Font Family,フォントファミリー
 Font family,フォントファミリー
 Font Size,フォントサイズ
-Font size,フォントサイズ
 Font Weight,フォントウェイト
 Font weight,フォントウェイト
 Font Style,フォントスタイル
 Font style,フォントスタイル
 Line Height,行の高さ
-Line height,行の高さ
 Letter Spacing,文字間隔
-Letter spacing,文字間隔
 Text Align,テキスト揃え
 Text align,テキスト揃え
 Text Decoration,テキスト装飾
@@ -1162,10 +1118,7 @@ Text color,テキスト色
 Uppercase,大文字
 Lowercase,小文字
 Capitalize,先頭大文字
-None,なし
 Underline,下線
-Strikethrough,取り消し線
-Overline,上線
 Normal,通常
 Italic,斜体
 Bold,太字
@@ -1198,9 +1151,6 @@ Repeat X,横に繰り返し
 Repeat Y,縦に繰り返し
 Background Attachment,背景固定
 Background attachment,背景固定
-Scroll,スクロール
-Fixed,固定
-Border,ボーダー
 Border Color,ボーダー色
 Border color,ボーダー色
 Border Width,ボーダー幅
@@ -1213,8 +1163,6 @@ Solid,実線
 Dashed,破線
 Dotted,点線
 Double,二重線
-None,なし
-Shadow,シャドウ
 Box Shadow,ボックスシャドウ
 Box shadow,ボックスシャドウ
 Text Shadow,テキストシャドウ
@@ -1222,12 +1170,9 @@ Text shadow,テキストシャドウ
 Add Shadow,シャドウを追加
 Add shadow,シャドウを追加
 Inset,内側
-Blur,ぼかし
 Spread,広がり
 X Offset,X オフセット
 Y Offset,Y オフセット
-Opacity,不透明度
-Filter,フィルター
 Filters,フィルター
 Blur Filter,ぼかしフィルター
 Saturation,彩度
@@ -1242,9 +1187,6 @@ Backdrop Filter,背景フィルター
 Backdrop filter,背景フィルター
 Transform,変形
 Transforms,変形
-Move,移動
-Scale,拡大縮小
-Rotate,回転
 Skew,傾斜
 Origin,原点
 Transform Origin,変形原点
@@ -1252,8 +1194,6 @@ Transform origin,変形原点
 Perspective,パース
 Preserve 3D,3D保持
 Preserve 3d,3D保持
-Transition,トランジション
-Transitions,トランジション
 Add Transition,トランジションを追加
 Add transition,トランジションを追加
 Transition Property,トランジションプロパティ
@@ -1268,26 +1208,18 @@ All Properties,すべてのプロパティ
 All properties,すべてのプロパティ
 Cursor,カーソル
 Pointer,ポインター
-Default,デフォルト
 Not Allowed,許可されていない
 Not allowed,許可されていない
 Grab,つかむ
 Grabbing,つかみ中
-Display,ディスプレイ
-Block,ブロック
 Inline,インライン
 Inline Block,インラインブロック
 Inline block,インラインブロック
-Flex,フレックス
-Grid,グリッド
-None,なし
 Flexbox,フレックスボックス
 Flex Direction,フレックス方向
 Flex direction,フレックス方向
-Row,行
 Row Reverse,行逆順
 Row reverse,行逆順
-Column,列
 Column Reverse,列逆順
 Column reverse,列逆順
 Justify Content,コンテンツの配置
@@ -1300,7 +1232,6 @@ Flex Start,開始位置
 Flex start,開始位置
 Flex End,終了位置
 Flex end,終了位置
-Center,中央
 Space Between,均等配置
 Space between,均等配置
 Space Around,両端余白
@@ -1312,7 +1243,6 @@ Baseline,ベースライン
 Flex Wrap,折り返し
 Flex wrap,折り返し
 Nowrap,折り返さない
-Wrap,折り返す
 Wrap Reverse,逆折り返し
 Wrap reverse,逆折り返し
 Flex Grow,拡張
@@ -1321,10 +1251,8 @@ Flex Shrink,縮小
 Flex shrink,縮小
 Flex Basis,基準サイズ
 Flex basis,基準サイズ
-Order,順序
 Align Self,自身の配置
 Align self,自身の配置
-Gap,間隔
 Row Gap,行間隔
 Row gap,行間隔
 Column Gap,列間隔
@@ -1350,28 +1278,11 @@ Min Content,最小コンテンツ
 Min content,最小コンテンツ
 Max Content,最大コンテンツ
 Max content,最大コンテンツ
-Position,配置
-Static,静的
-Relative,相対
-Absolute,絶対
-Fixed,固定
-Sticky,スティッキー
-Top,上
-Bottom,下
-Left,左
-Right,右
 Z-Index,Z インデックス
 Z-index,Zインデックス
-Overflow,オーバーフロー
-Visible,表示
-Hidden,非表示
-Scroll,スクロール
-Auto,自動
 Overflow X,横オーバーフロー
 Overflow Y,縦オーバーフロー
 Clip,クリップ
-Width,幅
-Height,高さ
 Min Width,最小幅
 Min width,最小幅
 Max Width,最大幅
@@ -1387,7 +1298,6 @@ rem,rem
 vw,vw
 vh,vh
 ch,ch
-Auto,自動
 Fit Content,コンテンツに合わせる
 Fit content,コンテンツに合わせる
 Aspect Ratio,アスペクト比
@@ -1396,8 +1306,6 @@ Object Fit,オブジェクトフィット
 Object fit,オブジェクトフィット
 Object Position,オブジェクト位置
 Object position,オブジェクト位置
-Margin,マージン
-Padding,パディング
 All Sides,すべての辺
 All sides,すべての辺
 Individual Sides,個別の辺
@@ -1410,8 +1318,6 @@ Padding Top,上パディング
 Padding Bottom,下パディング
 Padding Left,左パディング
 Padding Right,右パディング
-Page,ページ
-Pages,ページ
 Add Page,ページを追加
 Add page,ページを追加
 Create Page,ページを作成
@@ -1435,7 +1341,6 @@ CMS Pages,CMSページ
 CMS pages,CMSページ
 Template Page,テンプレートページ
 Template page,テンプレートページ
-Folder,フォルダ
 Folders,フォルダ
 Add Folder,フォルダを追加
 Add folder,フォルダを追加
@@ -1463,9 +1368,7 @@ Staged Changes,ステージング済みの変更
 Staged changes,ステージング済みの変更
 Publish Staged Changes,ステージング済みの変更を公開
 Publish staged changes,ステージング済みの変更を公開
-Publish changes,変更を公開
 Quick Find,クイック検索
-Search,検索
 Search Pages,ページを検索
 Search pages,ページを検索
 Search Elements,要素を検索
@@ -1486,16 +1389,13 @@ Recent pages,最近のページ
 Favorites,お気に入り
 Starred,スター付き
 Pinned,固定
-Archive,アーカイブ
 Archived,アーカイブ済み
 Trash,ゴミ箱
-Deleted,削除済み
 Restore,復元
 Delete Permanently,完全に削除
 Delete permanently,完全に削除
 Empty Trash,ゴミ箱を空にする
 Empty trash,ゴミ箱を空にする
-Preview,プレビュー
 Preview Mode,プレビューモード
 Preview mode,プレビューモード
 Desktop Preview,デスクトッププレビュー
@@ -1518,10 +1418,6 @@ Help Center,ヘルプセンター
 Help center,ヘルプセンター
 Documentation,ドキュメント
 Tutorials,チュートリアル
-Video Tutorials,動画チュートリアル
-Community,コミュニティ
-Forum,フォーラム
-Support,サポート
 Contact Support,サポートに連絡
 Contact support,サポートに連絡
 Report Bug,バグを報告
@@ -1536,8 +1432,6 @@ Whats New,新機能
 Release Notes,リリースノート
 Release notes,リリースノート
 Changelog,変更履歴
-Updates,アップデート
-Notifications,通知
 Notification,通知
 Mark as Read,既読にする
 Mark as read,既読にする
@@ -1545,7 +1439,6 @@ Mark All as Read,すべて既読にする
 Mark all as read,すべて既読にする
 Clear All,すべてクリア
 Clear all,すべてクリア
-Account,アカウント
 My Account,マイアカウント
 My account,マイアカウント
 Profile,プロフィール
@@ -1583,7 +1476,6 @@ Two-factor authentication,二要素認証
 2FA,二要素認証
 Enable 2FA,二要素認証を有効化
 Disable 2FA,二要素認証を無効化
-Security,セキュリティ
 Security Settings,セキュリティ設定
 Security settings,セキュリティ設定
 Sessions,セッション
@@ -1592,9 +1484,7 @@ Active sessions,アクティブなセッション
 Log Out,ログアウト
 Log out,ログアウト
 Sign Out,サインアウト
-Sign out,サインアウト
 Log In,ログイン
-Log in,ログイン
 Sign In,サインイン
 Sign in,サインイン
 Sign Up,サインアップ
@@ -1610,15 +1500,12 @@ Verify email,メールを確認
 Resend Verification,確認メールを再送
 Resend verification,確認メールを再送
 Workspace,ワークスペース
-Workspaces,ワークスペース
 My Workspaces,マイワークスペース
 My workspaces,マイワークスペース
 Create Workspace,ワークスペースを作成
 Create workspace,ワークスペースを作成
 Delete Workspace,ワークスペースを削除
 Delete workspace,ワークスペースを削除
-Workspace Settings,ワークスペース設定
-Workspace settings,ワークスペース設定
 Team Members,チームメンバー
 Team members,チームメンバー
 Invite Team Member,チームメンバーを招待
@@ -1649,71 +1536,36 @@ Delete webhook,Webhookを削除
 Endpoint URL,エンドポイントURL
 Endpoint url,エンドポイントURL
 Events,イベント
-Event,イベント
 Trigger Event,イベントをトリガー
 Trigger event,イベントをトリガー
 Integration,連携
-Integrations,連携
 Add Integration,連携を追加
 Add integration,連携を追加
 Remove Integration,連携を削除
 Remove integration,連携を削除
 Configure Integration,連携を設定
 Configure integration,連携を設定
-Connected,接続済み
-Disconnected,切断済み
-Connect,接続
-Disconnect,切断
 Reconnect,再接続
 Status,ステータス
-Active,アクティブ
 Inactive,非アクティブ
-Enabled,有効
-Disabled,無効
 Enable,有効化
 Disable,無効化
-On,オン
-Off,オフ
 Yes,はい
 No,いいえ
 OK,OK
-Cancel,キャンセル
-Confirm,確認
-Apply,適用
-Save,保存
 Save Changes,変更を保存
 Save changes,変更を保存
 Discard,破棄
 Discard Changes,変更を破棄
 Discard changes,変更を破棄
-Reset,リセット
 Reset to Default,デフォルトにリセット
 Reset to default,デフォルトにリセット
-Undo,元に戻す
-Redo,やり直す
-Copy,コピー
-Cut,切り取り
-Paste,貼り付け
-Duplicate,複製
-Delete,削除
-Remove,削除
-Add,追加
-Edit,編集
 Create,作成
-Update,更新
-Refresh,更新
-Retry,再試行
 Submit,送信
 Send,送信
-Upload,アップロード
-Export,エクスポート
-Import,インポート
-Share,共有
 Print,印刷
 More,その他
 Less,少なく
-Expand,展開
-Collapse,折りたたむ
 Show More,もっと表示
 Show more,もっと表示
 Show Less,少なく表示
@@ -1724,25 +1576,17 @@ See All,すべて見る
 See all,すべて見る
 Load More,さらに読み込む
 Load more,さらに読み込む
-Loading,読み込み中
-Saving,保存中
-Processing,処理中
 Please Wait,お待ちください
 Please wait,お待ちください
 Try Again,再試行
 Try again,再試行
 Learn More,詳細を見る
-Learn more,詳細を見る
 Get Started,始める
 Get started,始める
-Next,次へ
-Previous,前へ
-Back,戻る
 Continue,続ける
 Skip,スキップ
 Finish,完了
 Done,完了
-Close,閉じる
 Exit,終了
 Quit,終了
 today,今日
@@ -1763,7 +1607,6 @@ hours ago,時間前
 minutes ago,分前
 just now,たった今
 seconds ago,秒前
-a day ago,1日前
 a week ago,1週間前
 a month ago,1ヶ月前
 a year ago,1年前
@@ -1777,7 +1620,6 @@ Enable custom code,カスタムコードを有効化
 Enable custom code?,カスタムコードを有効化しますか？
 Alphabetical,アルファベット順
 Type,タイプ
-Order,順序
 Newest to oldest,新しい順
 Oldest to newest,古い順
 Access Control,アクセス制御
@@ -1799,7 +1641,6 @@ Team,チーム
 Domain Updates,ドメイン更新
 Review all domains,すべてのドメインを確認
 hours left,時間残り
-Starter site,スターターサイト
 H1 Headings,H1見出し
 H2 Headings,H2見出し
 H3 Headings,H3見出し
@@ -1818,7 +1659,7 @@ Style elements and build layouts,要素をスタイリングしレイアウト�
 Build pages with components and edit content,コンポーネントでページを構築しコンテンツを編集
 This is the site's title within Webflow.,これはWebflow内のサイトタイトルです。
 You can update what visitors see in search results in each page's settings.,各ページの設定で検索結果に表示される内容を更新できます。
-Upload a 32 x 32 pixel ICO, PNG, GIF, or JPG to display in browser tabs.,ブラウザタブに表示する32x32ピクセルのICO、PNG、GIF、またはJPGをアップロードしてください。
+Upload a 32 x 32 pixel ICO,PNG
 Upload a 256 x 256 pixel webclip image.,256x256ピクセルのウェブクリップ画像をアップロードしてください。
 This icon shows up when your website link is saved to an iPhone home screen.,このアイコンはWebサイトのリンクがiPhoneのホーム画面に保存されたときに表示されます。
 Choose the time zone from this list,このリストからタイムゾーンを選択してください
@@ -1826,7 +1667,7 @@ Protect your published site with a password.,公開サイトをパスワード�
 Showcased sites will appear on your public profile,ショーケースに追加されたサイトは公開プロフィールに表示されます
 Type a profile handle (@name),プロフィールハンドル(@name)を入力
 Templates help make it easy for others to build off this site.,テンプレートにすると他のユーザーがこのサイトをベースに構築しやすくなります。
-Display "Made in Webflow" badge,「Made in Webflow」バッジを表示
+Display Made in Webflow badge,「Made in Webflow」バッジを表示
 Display Webflow branding in HTML,HTMLにWebflowブランディングを表示
 Real-time collaboration is enabled for this site.,このサイトでリアルタイムコラボレーションが有効になっています。
 This impacts all users with access to this site.,このサイトにアクセスできるすべてのユーザーに影響します。
@@ -1843,10 +1684,10 @@ Upgrade this site to a CMS or Business plan to add legacy Editor users.,CMSま�
 The legacy Editor features the Webflow logo by default,レガシーエディターにはデフォルトでWebflowロゴが表示されます
 but you can replace it with your logo or your client's logo.,あなたのロゴまたはクライアントのロゴに置き換えることができます。
 Image should be 300 x 80px.,画像は300x80pxにしてください。
-SVG or transparent PNG recommended. GIF, JPG also supported.,SVGまたは透過PNGを推奨。GIF、JPGもサポート。
+SVG or transparent PNG recommended. GIF,JPG also supported.
 Configure an environment to review changes privately or with public URLs.,変更を非公開またはパブリックURLでレビューする環境を設定します。
 Learn more about configuring and using staging.,ステージングの設定と使用方法の詳細
-Must be alphanumeric (A-Z, 0-9) with dashes between words.,英数字(A-Z、0-9)とダッシュで構成する必要があります。
+Must be alphanumeric (A-Z,0-9) with dashes between words.
 Turn on private staging to restrict access to members and guests of this Workspace,プライベートステージングを有効にしてワークスペースのメンバーとゲストにアクセスを制限
 Private staging is only available on Enterprise plans.,プライベートステージングはエンタープライズプランでのみ利用可能です。
 Please contact sales for offerings.,オファリングについては営業にお問い合わせください。
@@ -1861,20 +1702,14 @@ You can also redirect multiple URLs to a single one with wild card rules.,ワイ
 This helps preserve your SEO ranking.,これによりSEOランキングを維持できます。
 Learn more about wildcard redirect rules.,ワイルドカードリダイレクトルールの詳細
 Load JS async,JSを非同期で読み込む
-Minify HTML,HTMLを圧縮
-Minify CSS,CSSを圧縮
-Minify JS,JSを圧縮
 Per-page CSS,ページ別CSS
-Enable HSTS for subdomains,サブドメインのHSTSを有効化
-Enable HSTS preload header,HSTSプリロードヘッダーを有効化
-Use secure frame headers,セキュアフレームヘッダーを使用
-To upload a custom SSL certificate, you need an Enterprise plan.,カスタムSSL証明書をアップロードするにはエンタープライズプランが必要です。
+To upload a custom SSL certificate,you need an Enterprise plan.
 No custom SSL certificates have been added to this site yet.,このサイトにはまだカスタムSSL証明書が追加されていません。
 All site projects start on a Starter plan.,すべてのサイトプロジェクトはスタータープランから始まります。
 You can upgrade your plan at any time,いつでもプランをアップグレードできます
 to publish to add a custom domain,カスタムドメインを追加して公開
 get more traffic,より多くのトラフィックを獲得
-and unlock additional features to create more powerful, custom websites.,より強力なカスタムWebサイトを作成する追加機能をアンロック。
+and unlock additional features to create more powerful,custom websites.
 Billed monthly,月額請求
 Billed yearly,年額請求
 Save up to 22% with yearly billing,年間請求で最大22%節約
@@ -1886,7 +1721,7 @@ Dedicated customer success and support team at every step.,専任のカスタマ
 Advanced collaboration,高度なコラボレーション
 Supercharged workflows and permissions for large teams.,大規模チーム向けの強化されたワークフローと権限。
 Enterprise-ready scale,エンタープライズ対応のスケール
-Scale traffic, content, and performance to your needs.,トラフィック、コンテンツ、パフォーマンスをニーズに合わせて拡張。
+Scale traffic,content
 Security and compliance,セキュリティとコンプライアンス
 Enterprise-grade security to meet your IT and data requirements.,IT要件とデータ要件を満たすエンタープライズグレードのセキュリティ。
 All prices are in USD with applicable taxes added at checkout.,すべての価格はUSDで、チェックアウト時に適用される税金が加算されます。
@@ -1946,7 +1781,7 @@ Learn more about bandwidth,帯域幅の詳細
 Site usage,サイト使用量
 Plan usage,プラン使用量
 No Cloud usage yet,まだCloud使用量なし
-Host apps, not just websites, with Webflow Cloud.,Webflow CloudでWebサイトだけでなくアプリもホスト。
+Host apps,not just websites
 Connect a Github repository to your Webflow site to get started.,開始するにはGitHubリポジトリをWebflowサイトに接続してください。
 Open Webflow Cloud,Webflow Cloudを開く
 You can set SEO meta titles and descriptions,SEOメタタイトルと説明を設定できます
@@ -1957,7 +1792,7 @@ Indexing is disabled,インデックスが無効
 If indexing is disabled,インデックスが無効の場合
 a unique robots.txt will be published only on the subdomain,ユニークなrobots.txtがサブドメインのみに公開されます
 telling search engines to ignore the domain.,検索エンジンにドメインを無視するよう指示します。
-If populated, this will be added to all of your pages.,入力すると、すべてのページに追加されます。
+If populated,this will be added to all of your pages.
 Traffic control,トラフィック制御
 Allow search engine crawlers,検索エンジンクローラーを許可
 Allow AI bots,AIボットを許可
@@ -1971,7 +1806,6 @@ Boost your SEO by automatically updating your sitemap whenever you publish your 
 View your sitemap at,サイトマップを表示:
 You'll still need to submit your sitemap to Google.,サイトマップをGoogleに送信する必要があります。
 Custom sitemap.xml,カスタムsitemap.xml
-If populated, sitemap.xml will be added to all of your custom domains.,入力すると、すべてのカスタムドメインにsitemap.xmlが追加されます。
 Verify your site with Google to get access to your site's Google search data,Googleでサイトを確認してサイトのGoogle検索データにアクセス
 and submit your sitemap for indexing.,サイトマップをインデックス用に送信。
 Google site verification ID,Googleサイト確認ID
@@ -1986,7 +1820,7 @@ and append the page's unique URL slug after it.,その後にページ固有のUR
 Upload llms.txt file,llms.txtファイルをアップロード
 Upload your llms.txt file here.,llms.txtファイルをここにアップロード。
 This file helps control how AI models and language learning models interact with your site.,このファイルはAIモデルと言語学習モデルがサイトとどのようにやり取りするかを制御します。
-To manage reCAPTCHA, spam filtering, bot protection or file uploads, go to the Integrations tab.,reCAPTCHA、スパムフィルタリング、ボット保護、ファイルアップロードを管理するには連携タブに移動。
+To manage reCAPTCHA,spam filtering
 View submission data for all the forms in your site.,サイト内のすべてのフォームの送信データを表示。
 Form notification settings are now available on the canvas with every form.,フォーム通知設定がキャンバス上の各フォームで利用可能になりました。
 Learn more about forms,フォームの詳細
@@ -1999,10 +1833,10 @@ Choose font from list,リストからフォントを選択
 Select Google Font...,Google Fontを選択...
 Preview the fonts on Google Fonts.,Google Fontsでフォントをプレビュー。
 Fonts not in this list are already available in Webflow.,このリストにないフォントはすでにWebflowで利用可能です。
-Once you add a font here, refresh your site to make it available in the fonts list.,ここにフォントを追加したらサイトを更新してフォントリストで利用可能にします。
+Once you add a font here,refresh your site to make it available in the fonts list.
 Upload custom font file(s),カスタムフォントファイルをアップロード
 Add custom fonts to your font list.,フォントリストにカスタムフォントを追加。
-For maximum browser support, upload in TTF, OTF, EOT and WOFF formats.,最大限のブラウザサポートのためTTF、OTF、EOT、WOFF形式でアップロード。
+For maximum browser support,upload in TTF
 Use Adobe Fonts in this Webflow site by adding the API token below.,下にAPIトークンを追加してこのWebflowサイトでAdobe Fontsを使用。
 You can also add a token for all of your sites in Workspace settings > Integrations.,ワークスペース設定 > 連携ですべてのサイトにトークンを追加することもできます。
 Adobe Fonts API token for this site,このサイトのAdobe Fonts APIトークン
@@ -2025,7 +1859,7 @@ Create a Google Maps JavaScript API Key and paste it here.,Google Maps JavaScrip
 Check out the Maps Guide to learn more about adding maps to your site.,マップガイドでサイトにマップを追加する方法の詳細を確認。
 Start tracking events on your site by adding your Meta Pixel ID.,Meta Pixel IDを追加してサイトでイベントトラッキングを開始。
 Need to be GDPR compliant?,GDPR準拠が必要ですか？
-Enable "delay for cookie consent" and add a cookie consent form to your site.,「Cookie同意のための遅延」を有効化してサイトにCookie同意フォームを追加。
+Enable delay for cookie consent and add a cookie consent form to your site.,「Cookie同意のための遅延」を有効化してサイトにCookie同意フォームを追加。
 Meta Pixel ID,Meta Pixel ID
 Create a Meta Pixel and paste it here.,Meta Pixelを作成してここに貼り付けてください。
 Delay for cookie consent,Cookie同意のための遅延
@@ -2040,30 +1874,29 @@ If you want to connect your marketing automation platform to your Webflow sites,
 please contact sales to learn more about our Enterprise offerings.,エンタープライズオファリングの詳細は営業にお問い合わせください。
 No marketing integrations have been added to this site yet.,このサイトにはまだマーケティング連携が追加されていません。
 Prevent spam submissions or bots from filling out forms on your site.,スパム送信やボットがサイトのフォームに入力するのを防止。
-If valid submissions get marked as spam, you can turn this off.,有効な送信がスパムとしてマークされた場合はこれをオフにできます。
+If valid submissions get marked as spam,you can turn this off.
 You'll have to republish your site if you change the bot blocking setting.,ボットブロック設定を変更した場合はサイトを再公開する必要があります。
 Bots are not being blocked,ボットはブロックされていません
 Spam is being filtered,スパムはフィルタリングされています
-Ensure your forms are only submitted by humans, and avoid spam.,フォームが人間によってのみ送信されることを確認しスパムを回避。
+Ensure your forms are only submitted by humans,and avoid spam.
 reCAPTCHA v2 site key,reCAPTCHA v2サイトキー
 Register for a new key.,新しいキーを登録。
 reCAPTCHA v2 secret key,reCAPTCHA v2シークレットキー
 Enable reCAPTCHA,reCAPTCHAを有効化
 reCAPTCHA validation is disabled for all forms on this site,このサイトのすべてのフォームでreCAPTCHA検証が無効
-If enabled, all forms will be validated.,有効にするとすべてのフォームが検証されます。
+If enabled,all forms will be validated.
 Forms that do not contain a reCAPTCHA field will fail to submit.,reCAPTCHAフィールドのないフォームは送信に失敗します。
 Restrict uploaded file access,アップロードファイルアクセスを制限
 Turn this on to restrict access to files uploaded through your site's forms,サイトのフォームを通じてアップロードされたファイルへのアクセスを制限するにはこれを有効化
 to people who are logged in to your site,サイトにログインしているユーザーに
-i.e., you, your client, and collaborators.,つまりあなた、クライアント、コラボレーター。
+i.e.,you
 Turn it off to allow public access to files,ファイルへのパブリックアクセスを許可するにはオフに
-which you might need for certain publishing formats or integrations, like Zapier.,Zapierなどの特定の公開フォーマットや連携に必要な場合があります。
+which you might need for certain publishing formats or integrations,like Zapier.
 Login is required,ログインが必要
 Generate API token,APIトークンを生成
 A site API token allows your site to interact with Webflow's REST API,サイトAPIトークンでサイトとWebflowのREST APIがやり取り可能
 allowing you to extend the native capabilities Webflow provides.,Webflowのネイティブ機能を拡張できます。
 No API tokens generated,APIトークンは生成されていません
-Add Webhook,Webhookを追加
 Manage your webhooks here or through our API.,ここまたはAPIでWebhookを管理。
 No webhooks have been added to this site yet.,このサイトにはまだWebhookが追加されていません。
 Run custom code in Preview,プレビューでカスタムコードを実行
@@ -2073,7 +1906,7 @@ Every collaborator can determine if they want to run all custom code when they o
 That won't affect this global setting.,これはグローバル設定に影響しません。
 Add custom HTML & CSS,カスタムHTML & CSSを追加
 Add custom code for more flexibility.,カスタムコードを追加してより柔軟に。
-Save your progress by pressing Cmd+Shift+S on Mac, or Ctrl+Shift+S on Windows.,MacではCmd+Shift+S、WindowsではCtrl+Shift+Sを押して進行状況を保存。
+Save your progress by pressing Cmd+Shift+S on Mac,or Ctrl+Shift+S on Windows.
 Custom code is not validated.,カスタムコードは検証されません。
 Incorrect code may cause issues with the page when published or previewed.,不正なコードはページの公開時またはプレビュー時に問題を引き起こす可能性があります。
 Head code,ヘッドコード
@@ -2087,8 +1920,8 @@ Note: This is an advanced feature that can cause site issues if you're doing som
 Use at your own risk.,自己責任でご使用ください。
 Href prefix,Hrefプレフィックス
 Set a prefix for internal page links.,内部ページリンクのプレフィックスを設定。
-This won't affect external, mail or phone links,外部リンク、メールリンク、電話リンクには影響しません
-or links that get their value from the link, email, or phone fields.,またはリンク、メール、電話フィールドから値を取得するリンク。
+This won't affect external,mail or phone links
+or links that get their value from the link,email
 SQLite,SQLite
 Key-value store,キーバリューストア
 Object storage,オブジェクトストレージ
@@ -2099,7 +1932,89 @@ Share your feedback,フィードバックを共有
 Costs,コスト
 Features,機能
 Domain,ドメイン
-Can publish,公開可能
 Connected Apps,接続済みアプリ
 Form integrations,フォーム連携
 Cloudflare Turnstile spam protection,Cloudflare Turnstileスパム保護
+Move to,移動先
+Move up,上へ移動
+Move down,下へ移動
+Move to top,先頭へ移動
+Move to bottom,末尾へ移動
+Open,開く
+Reload,再読み込み
+Got it,了解
+Dismiss,閉じる
+Download,ダウンロード
+Apply changes,変更を適用
+Save and close,保存して閉じる
+Save and publish,保存して公開
+Show password,パスワードを表示
+Hide password,パスワードを非表示
+Reorder,並べ替え
+Drag to reorder,ドラッグして並べ替え
+No results found,結果が見つかりません
+No results,結果なし
+No items,アイテムがありません
+Nothing here yet,まだ何もありません
+Coming soon,近日公開
+Read more,続きを読む
+Show details,詳細を表示
+Hide details,詳細を非表示
+Select none,選択を解除
+Remove all,すべて削除
+Add all,すべて追加
+Confirm delete,削除の確認
+Are you sure?,よろしいですか？
+This action cannot be undone.,この操作は取り消せません。
+Close panel,パネルを閉じる
+Copy to clipboard,クリップボードにコピー
+Copied to clipboard,クリップボードにコピーしました
+Link copied,リンクをコピーしました
+Beta,ベータ
+New,新規
+Free,無料
+Pro,プロ
+Not connected,未接続
+In progress,進行中
+Success,成功
+Unsaved changes,未保存の変更
+All changes saved,すべての変更を保存しました
+Last saved,最終保存
+Just now,たった今
+Today,今日
+Yesterday,昨日
+Expires,有効期限
+Expired,期限切れ
+Sizing,サイズ
+Add elements,要素を追加
+Add element,要素を追加
+Elements,要素
+Sections,セクション
+Containers,コンテナ
+Text link,テキストリンク
+Text input,テキスト入力
+Custom code,カスタムコード
+Collection,コレクション
+Collections,コレクション
+Collection page,コレクションページ
+Date/Time,日時
+Multi-reference,複数参照
+Multi-image,複数画像
+Categories,カテゴリー
+Category,カテゴリー
+Quantity,数量
+Subtotal,小計
+Total,合計
+Refund,返金
+Fulfillment,フルフィルメント
+Role,役割
+Permissions,権限
+Activity,アクティビティ
+Forgot password?,パスワードをお忘れですか？
+Remember me,ログイン状態を保持
+Delete account,アカウントを削除
+Title,タイトル
+Description,説明
+Time,時刻
+Details,詳細
+Other,その他

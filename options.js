@@ -1,9 +1,10 @@
 // options.js
-// オプションページのロジック（用語集表示、部分置換プレビューなど）
+// オプションページのロジック（用語集表示、翻訳プレビュー、統計表示など）
 
+const WFJA = globalThis.WFJA;
 let translationDict = {};
-let translationPairs = [];
-const UNTRANSLATED_PREFIX = "__untranslated__:";
+let translator = null;
+const UNTRANSLATED_PREFIX = WFJA.constants.UNTRANSLATED_PREFIX;
 
 function escapeHtml(text) {
   const div = document.createElement("div");
@@ -41,9 +42,15 @@ async function showTranslationTable() {
   // CSVファイルをfetch
   const res = await fetch(chrome.runtime.getURL('translation_terms.csv'));
   const csvText = await res.text();
-  // ユーティリティ関数で辞書化
-  translationDict = parseTranslationCSV(csvText);
-  translationPairs = optimizeTranslationPairs(translationDict);
+  // モジュールで辞書化＆翻訳器を構築
+  translationDict = WFJA.csv.parseTranslationCSV(csvText);
+  translator = WFJA.translator.createTranslator(translationDict, {
+    patterns: WFJA.constants.TRANSLATION_PATTERNS,
+  });
+
+  // 用語数を表示
+  const countEl = document.getElementById("term-count");
+  if (countEl) countEl.textContent = `（収録: ${Object.keys(translationDict).length} 件）`;
 
   // テーブル要素を作成
   const table = document.createElement('table');
@@ -65,15 +72,15 @@ async function showTranslationTable() {
   document.body.appendChild(table);
 }
 
-// 部分置換プレビュー機能
+// 翻訳プレビュー機能（完全一致＋動的パターンの両方を試す）
 function previewPartialReplace() {
   const input = document.getElementById('preview-input').value;
-  const translated = translateTextWithStats(input, translationPairs, {
-    skipIfJapanese: false,
-    caseInsensitive: false,
-  });
+  const translated = translator
+    ? translator.translate(input, { skipIfJapanese: false, caseInsensitive: false })
+    : null;
   const result = translated ? translated.text : input;
-  document.getElementById('preview-result').textContent = `翻訳結果: ${result}`;
+  const hit = translated ? "（一致あり）" : "（一致なし・原文のまま）";
+  document.getElementById('preview-result').textContent = `翻訳結果: ${result} ${hit}`;
 }
 
 async function loadTermStats() {

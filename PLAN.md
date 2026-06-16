@@ -422,6 +422,32 @@ function getOriginalText(node) {
    - 未翻訳候補のCSVを `English,Japanese`（Japanese空欄）形式でも出せるようにする
    - 未翻訳候補の「除外（無視）リスト」機能
 
+## v1.1.0 アップデート内容
+
+### リファクタリング（保守性向上）
+- [x] 単一の `content.js` / `utils.js` を責務ごとに `src/` へ分割
+  - `src/constants.js` … 除外セレクタ・対象属性・動的パターン等の設定
+  - `src/csv.js` … CSVパース／シリアライズ
+  - `src/translator.js` … 翻訳エンジン（完全一致＋動的パターン）
+  - `src/dom.js` … DOM走査・テキスト/属性翻訳・MutationObserver
+  - `src/content.js` … エントリポイント（設定・統計・URL判定・初期化）
+- [x] `globalThis.WFJA` 名前空間でモジュール間連携（Node からも require 可能でテスト容易）
+- [x] DOM処理のキャッシュ（処理済みノード・属性）をクロージャに閉じ込め
+
+### 翻訳カバレッジの拡張
+- [x] 属性翻訳に対応（`title` / `aria-label` / `placeholder` / `alt`）→ ツールチップ等も日本語化
+- [x] 動的パターン翻訳に対応（`5 minutes ago` → `5分前`、`12 items` → `12個のアイテム`、`Page 2 of 5` 等）
+- [x] 用語集を整理（重複168行を除去）し新規83件を追加（合計2,019件）
+
+### 機能追加
+- [x] ポップアップUIを実装（翻訳のON/OFF切り替え、切替時に対象タブを自動リロード）
+- [x] オプションに翻訳プレビュー（完全一致＋パターン）と用語数表示
+
+### 品質
+- [x] DOM走査中の `textContent` 書き換えでTreeWalkerが壊れ後続ノードを取りこぼすバグを修正（収集→処理の二段構え）
+- [x] Node標準テストランナーによるテストを追加（`node --test`、依存なし）
+- [x] 用語集の正規化・重複検査を行うメンテナンススクリプトとCIを追加
+
 ## 参考情報
 
 - [Chrome Extensions - Content Scripts](https://developer.chrome.com/docs/extensions/mv3/content_scripts/)
