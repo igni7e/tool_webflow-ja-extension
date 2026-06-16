@@ -15,14 +15,20 @@ jobs:
         run: |
           zip -r extension.zip \
             manifest.json \
-            content.js \
-            utils.js \
+            src/constants.js \
+            src/csv.js \
+            src/translator.js \
+            src/dom.js \
+            src/content.js \
             translation_terms.csv \
             icon16.png \
             icon48.png \
             icon128.png \
             options.html \
-            options.js
+            options.js \
+            popup.html \
+            popup.js \
+            popup.css
 
       - name: Upload to Chrome Web Store
         uses: mnao305/chrome-extension-upload@v5.0.0

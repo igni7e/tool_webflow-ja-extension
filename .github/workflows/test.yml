@@ -1,0 +1,30 @@
+name: Test
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # 翻訳エンジンの単体テスト（依存パッケージ不要。jsdomが無い結合テストは自動スキップ）
+      - name: Run tests
+        run: node --test
+
+      # 用語集CSVに重複や未整形が無いことを確認（差分が出る場合は失敗扱い）
+      - name: Verify dictionary is normalized
+        run: |
+          node scripts/build_dictionary.js
+          if ! git diff --quiet translation_terms.csv; then
+            echo "::error::translation_terms.csv が正規化されていません。'npm run build:dict' を実行してコミットしてください。"
+            git diff --stat translation_terms.csv
+            exit 1
+          fi
