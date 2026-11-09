@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(ralph-wiggum:ralph-loop)",
+      "mcp__plugin_playwright_playwright__browser_navigate"
+    ]
+  }
+}

@@ -17,6 +17,8 @@ let pendingStatsFlush = null;
 
 // 設定
 let debugMode = false;
+let translationEnabled = true;
+let mutationObserver = null;
 
 function isWebflowAdminUI() {
   const hostname = window.location.hostname;
@@ -55,10 +57,13 @@ function isWebflowAdminUI() {
 
 async function loadSettings() {
   try {
-    const res = await chrome.storage.sync.get(["debugMode"]);
+    const res = await chrome.storage.sync.get(["debugMode", "translationEnabled"]);
     debugMode = Boolean(res.debugMode);
+    // undefinedの場合はtrue（デフォルトON）
+    translationEnabled = res.translationEnabled !== false;
   } catch {
     debugMode = false;
+    translationEnabled = true;
   }
 }
 
@@ -281,6 +286,20 @@ function recordTermStats(termCounts) {
   scheduleStatsFlush();
 }
 
+// storage変更リスナー（翻訳ON/OFF切り替え対応）
+chrome.storage.onChanged.addListener((changes, areaName) => {
+  if (areaName !== 'sync') return;
+  if (changes.translationEnabled) {
+    translationEnabled = changes.translationEnabled.newValue !== false;
+    if (translationEnabled && isWebflowAdminUI()) {
+      // キャッシュクリアして翻訳再開
+      processedNodes = new WeakSet();
+      nodeLastValueMap = new WeakMap();
+      walkAndReplace(document.body);
+    }
+  }
+});
+
 // 親要素のtextContent全体で翻訳を試行（分割テキストノード対応）
 function tryTranslateAsParentPhrase(textNode) {
   const parent = textNode.parentElement;
@@ -329,6 +348,7 @@ function tryTranslateAsParentPhrase(textNode) {
 
 // 2. テキストノードの部分置換（最適化版 + マッピング統計）
 function replaceTextNode(node) {
+  if (!translationEnabled) return;
   if (!node || node.nodeType !== Node.TEXT_NODE) return;
   if (processedNodes.has(node)) {
     // ただし nodeValue が変わっていたら再処理する
@@ -371,6 +391,7 @@ function replaceTextNode(node) {
 
 // 3. DOMツリー走査（テキストノードのみ対象）
 function walkAndReplace(root) {
+  if (!translationEnabled) return;
   const walker = document.createTreeWalker(
     root,
     NodeFilter.SHOW_TEXT,
@@ -385,7 +406,8 @@ function walkAndReplace(root) {
 
 // 4. MutationObserverで動的要素にも対応
 function observeMutations() {
-  const observer = new MutationObserver((mutations) => {
+  mutationObserver = new MutationObserver((mutations) => {
+    if (!translationEnabled) return;
     const textNodes = new Set();
     for (const mutation of mutations) {
       if (mutation.type === "characterData" && mutation.target?.nodeType === Node.TEXT_NODE) {
@@ -405,7 +427,7 @@ function observeMutations() {
     }
     for (const t of textNodes) replaceTextNode(t);
   });
-  observer.observe(document.body, {
+  mutationObserver.observe(document.body, {
     childList: true,
     subtree: true,
     characterData: true,
@@ -439,7 +461,11 @@ function hookSpaNavigation(onUrlChange) {
 
   await loadExistingStats();
   await loadTranslationDict();
-  walkAndReplace(document.body);
+
+  // 翻訳が有効な場合のみ初期翻訳を実行
+  if (translationEnabled) {
+    walkAndReplace(document.body);
+  }
   observeMutations();
 
   // SPA遷移でも継続
