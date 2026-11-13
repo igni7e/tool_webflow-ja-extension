@@ -3,7 +3,7 @@ name: Publish to Chrome Web Store
 on:
   push:
     tags:
-      - 'v*'  # v1.0.0 などのタグでトリガー
+      - 'v*'  # v1.1.0 などのタグでトリガー
 
 jobs:
   publish:
@@ -11,18 +11,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Create ZIP
+      - name: Check dictionary
+        run: python3 scripts/check_dict.py translation_terms.csv
+
+      - name: Check tag matches manifest version
         run: |
-          zip -r extension.zip \
-            manifest.json \
-            content.js \
-            utils.js \
-            translation_terms.csv \
-            icon16.png \
-            icon48.png \
-            icon128.png \
-            options.html \
-            options.js
+          MANIFEST_VERSION=$(python3 -c "import json;print(json.load(open('manifest.json'))['version'])")
+          if [ "v${MANIFEST_VERSION}" != "${GITHUB_REF_NAME}" ]; then
+            echo "タグ ${GITHUB_REF_NAME} と manifest.json の version ${MANIFEST_VERSION} が一致しません"
+            exit 1
+          fi
+
+      - name: Run tests
+        run: node --test tests/*.test.js
+
+      - name: Create ZIP
+        run: bash scripts/build.sh extension.zip
 
       - name: Upload to Chrome Web Store
         uses: mnao305/chrome-extension-upload@v5.0.0

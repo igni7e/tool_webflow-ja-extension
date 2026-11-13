@@ -1,2 +1,7 @@
 .DS_Store
 .cursor/
+
+# ビルド成果物・ローカル設定
+dist/
+*.zip
+.claude/settings.local.json

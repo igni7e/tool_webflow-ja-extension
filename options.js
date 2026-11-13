@@ -2,7 +2,7 @@
 // オプションページのロジック（用語集表示、部分置換プレビューなど）
 
 let translationDict = {};
-let translationPairs = [];
+let translator = null;
 const UNTRANSLATED_PREFIX = "__untranslated__:";
 
 function escapeHtml(text) {
@@ -43,7 +43,7 @@ async function showTranslationTable() {
   const csvText = await res.text();
   // ユーティリティ関数で辞書化
   translationDict = parseTranslationCSV(csvText);
-  translationPairs = optimizeTranslationPairs(translationDict);
+  translator = createTranslator(translationDict);
 
   // テーブル要素を作成
   const table = document.createElement('table');
@@ -68,10 +68,7 @@ async function showTranslationTable() {
 // 部分置換プレビュー機能
 function previewPartialReplace() {
   const input = document.getElementById('preview-input').value;
-  const translated = translateTextWithStats(input, translationPairs, {
-    skipIfJapanese: false,
-    caseInsensitive: false,
-  });
+  const translated = translateTextWithStats(input, translator, { skipIfJapanese: false });
   const result = translated ? translated.text : input;
   document.getElementById('preview-result').textContent = `翻訳結果: ${result}`;
 }

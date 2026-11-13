@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       statusText.textContent = '翻訳が有効です';
     } else {
       status.className = 'status disabled';
-      statusText.textContent = '翻訳が無効です（リロードで元に戻ります）';
+      statusText.textContent = '翻訳が無効です（英語表示）';
     }
   }
 });
