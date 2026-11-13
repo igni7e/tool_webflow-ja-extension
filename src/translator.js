@@ -124,27 +124,157 @@
   }
 
   /**
-   * 辞書とパターンを保持し、完全一致→パターンの順で翻訳する翻訳器を生成する。
+   * 連続空白・ノーブレークスペース・細いスペースを1つの半角スペースにまとめ、
+   * 曲がった引用符をまっすぐな引用符にそろえる。
+   * @param {string} text
+   * @returns {string}
+   */
+  function normalizeText(text) {
+    return String(text)
+      .replace(/[  -​  　]/g, " ")
+      .replace(/[‘’]/g, "'")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  // 末尾に付いていても本体だけで訳してよい記号
+  // （省略記号・コロン・必須マーク・ショートカット表記 " (V)" " (⌘K)"）
+  const TRAILING_SUFFIX_RE = /(\s*(?:\.\.\.|…|:|\s\*|\*|\s\([A-Z0-9⌘⇧⌥⌃+]{1,6}\)))$/;
+
+  // 英字のみの短い語は大小文字を区別する（"ID" と "id" などの誤訳を避ける）
+  const MIN_CASE_FOLD_LENGTH = 4;
+
+  // CSV キー内のプレースホルダー
+  //   {n} {n2} …: 数値（1,234 / 2.5 / 2K / 10M / 11+ も可）
+  //   {x}: 辞書・パターンで訳せる語句、または数字を含む値（日付・時刻・金額）
+  //   {s}: 任意の文字列（サイト名・プラン名など、訳さずそのまま埋め込む）
+  const PLACEHOLDER_RE = /\{[a-z][a-z0-9]*\}/i;
+
+  function isNumericName(name) {
+    return /^n\d*$/.test(name);
+  }
+
+  /**
+   * "{n} instances" のような CSV キーを正規表現に変換する。
+   * @returns {{ en: string, ja: string, names: string[], literalLength: number, re: RegExp } | null}
+   */
+  function compileCsvPattern(en, ja) {
+    const names = [];
+    let literalLength = 0;
+    let src = "^";
+    for (const part of en.split(/(\{[a-z][a-z0-9]*\})/i)) {
+      const m = /^\{([a-z][a-z0-9]*)\}$/i.exec(part);
+      if (m) {
+        names.push(m[1]);
+        src += isNumericName(m[1]) ? "(\\d[\\d.,]*[KkMm]?\\+?)" : "(.+?)";
+      } else if (part) {
+        literalLength += part.length;
+        src += escapeRegex(part).replace(/ +/g, "\\s+");
+      }
+    }
+    try {
+      return { en, ja, names, literalLength, re: new RegExp(src + "$") };
+    } catch {
+      return null;
+    }
+  }
+
+  /**
+   * 辞書とパターンを保持し、翻訳器を生成する。探索順:
+   *   1. 完全一致（Map） → 空白を正規化して一致 → 大小文字を無視して一致（4文字以上）
+   *   2. CSV のプレースホルダー付きキー（{n}/{x}/{s}）
+   *   3. options.patterns の正規表現パターン（constants.js の TRANSLATION_PATTERNS）
+   *   4. 見つからなければ末尾の記号（: … * (V) など）を外して 1〜3 を再試行
    * @param {Object<string, string>} dict
    * @param {{ patterns?: Array }} [options]
-   * @returns {{
-   *   dict: Object<string,string>,
-   *   pairs: Array<[string,string]>,
-   *   patterns: Array,
-   *   translate: (text: string, opts?: object) => ({text: string, termCounts: object} | null)
-   * }}
    */
   function createTranslator(dict, options = {}) {
     const pairs = optimizeTranslationPairs(dict);
     const patterns = options.patterns || [];
 
-    function translate(inputText, opts = {}) {
-      const exact = translateExact(inputText, pairs, opts);
-      if (exact) return exact;
-      return translatePattern(inputText, patterns, opts);
+    const exact = new Map();
+    const normalized = new Map();
+    const folded = new Map();
+    const csvPatterns = [];
+
+    for (const [en, ja] of Object.entries(dict || {})) {
+      if (!en || !ja) continue;
+      if (PLACEHOLDER_RE.test(en)) {
+        const p = compileCsvPattern(en, ja);
+        if (p) csvPatterns.push(p);
+        continue;
+      }
+      exact.set(en, en);
+      const n = normalizeText(en);
+      if (!normalized.has(n)) normalized.set(n, en);
+      const f = n.toLowerCase();
+      if (!folded.has(f)) folded.set(f, en);
+    }
+    // 具体的な（固定部分が長い）パターンを先に試す
+    csvPatterns.sort((a, b) => b.literalLength - a.literalLength);
+
+    /** @returns {{ ja: string, key: string } | null} */
+    function lookup(text, depth) {
+      const key =
+        exact.get(text) ||
+        normalized.get(text) ||
+        (text.length >= MIN_CASE_FOLD_LENGTH ? folded.get(text.toLowerCase()) : undefined);
+      if (key) return { ja: dict[key], key };
+
+      for (const p of csvPatterns) {
+        const m = p.re.exec(text);
+        if (!m) continue;
+        let ja = p.ja;
+        let ok = true;
+        p.names.forEach((name, i) => {
+          let value = m[i + 1];
+          if (name === "x") {
+            // 例: "Edited 20 minutes ago" → "20分前に編集"
+            const inner = depth < 2 ? lookup(value, depth + 1) : null;
+            if (inner) value = inner.ja;
+            else if (!/\d/.test(value)) ok = false;
+          }
+          ja = ja.split(`{${name}}`).join(value);
+        });
+        if (ok) return { ja, key: p.en };
+      }
+
+      for (const pat of patterns) {
+        const m = text.match(pat.re);
+        if (!m) continue;
+        const replaced = typeof pat.to === "function" ? pat.to(m) : text.replace(pat.re, pat.to);
+        if (replaced == null || replaced === text) continue;
+        return { ja: replaced, key: `__pattern__:${pat.id}` };
+      }
+      return null;
     }
 
-    return { dict, pairs, patterns, translate };
+    function translate(inputText, opts = {}) {
+      const { skipIfJapanese = true } = opts;
+      if (!inputText) return null;
+      if (skipIfJapanese && isAlreadyTranslated(inputText)) return null;
+      const core = normalizeText(inputText);
+      if (!core || !/[A-Za-z]/.test(core)) return null;
+
+      let hit = lookup(core, 0);
+      let suffix = "";
+      if (!hit) {
+        const m = TRAILING_SUFFIX_RE.exec(core);
+        const body = m ? core.slice(0, -m[1].length).trim() : "";
+        if (body) {
+          hit = lookup(body, 0);
+          const raw = m[1].trim();
+          suffix = raw === "..." ? "…" : raw;
+          if (raw === "*" || raw.startsWith("(")) suffix = " " + raw;
+        }
+      }
+      if (!hit) return null;
+
+      const { leading, trailing } = splitSurroundingSpace(inputText);
+      return { text: leading + hit.ja + suffix + trailing, termCounts: { [hit.key]: 1 } };
+    }
+
+    return { dict, pairs, patterns, translate, size: exact.size + csvPatterns.length };
   }
 
   /**
@@ -163,6 +293,7 @@
     translateExact,
     translatePattern,
     createTranslator,
+    normalizeText,
     // 後方互換
     translateTextWithStats,
   };

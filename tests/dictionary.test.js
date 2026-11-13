@@ -51,3 +51,22 @@ test("十分な数の用語が収録されている", () => {
   const dict = parseTranslationCSV(csvText);
   assert.ok(Object.keys(dict).length >= 2000, `用語数: ${Object.keys(dict).length}`);
 });
+
+test("1行がちょうど2列（英文中のカンマはクォートで囲む）", () => {
+  const bad = [];
+  for (let i = 1; i < lines.length; i++) {
+    if (!lines[i]) continue;
+    const cols = parseCSVRow(lines[i]);
+    if (cols.length !== 2) bad.push(`行${i + 1}: ${cols.length}列`);
+  }
+  assert.deepEqual(bad, [], bad.join(" / "));
+});
+
+test("訳が英語の断片になっている行がない（カンマ崩れの検出）", () => {
+  const dict = parseTranslationCSV(csvText);
+  const JA = /[぀-ヿ一-鿿]/;
+  const bad = Object.entries(dict).filter(
+    ([en, ja]) => !JA.test(ja) && ja !== en && /[A-Za-z]{3}/.test(ja) && !/\{[a-z]/i.test(en)
+  );
+  assert.deepEqual(bad, [], bad.map(([en, ja]) => `${en} → ${ja}`).join(" / "));
+});

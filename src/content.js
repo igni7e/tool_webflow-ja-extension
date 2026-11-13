@@ -99,21 +99,17 @@
   }
 
   // ---- SPA遷移フック --------------------------------------------------------
+  // content script は隔離された実行環境で動くため、history.pushState を差し替えても
+  // ページ側（Webflow）の呼び出しは検知できない。URL の変化を定期的に確認する。
   function hookSpaNavigation(onUrlChange) {
-    const fire = () => onUrlChange();
-    const origPush = history.pushState;
-    const origReplace = history.replaceState;
-    history.pushState = function (...args) {
-      const ret = origPush.apply(this, args);
-      fire();
-      return ret;
+    let last = location.href;
+    const check = () => {
+      if (location.href === last) return;
+      last = location.href;
+      onUrlChange();
     };
-    history.replaceState = function (...args) {
-      const ret = origReplace.apply(this, args);
-      fire();
-      return ret;
-    };
-    window.addEventListener("popstate", fire);
+    setInterval(check, 500);
+    window.addEventListener("popstate", check);
   }
 
   // 設定変更（特に enabled）に追従：ON/OFFが切り替わったらリロードして反映
@@ -136,12 +132,11 @@
   }
 
   // ---- 初期化 ---------------------------------------------------------------
-  async function init() {
-    await loadSettings();
-    watchSettingChanges();
+  let started = false;
 
-    if (!enabled) return; // 翻訳OFF時は何もしない
-    if (!isWebflowAdminUI()) return; // 管理画面以外では動かさない
+  async function start() {
+    if (started) return;
+    started = true;
 
     await loadExistingStats();
     const translator = await buildTranslator();
@@ -155,16 +150,26 @@
 
     domTranslator.translateTree(document.body);
     domTranslator.observe(document.body);
+  }
 
-    // SPA遷移でも継続
-    let lastHref = location.href;
+  async function init() {
+    await loadSettings();
+    watchSettingChanges();
+
+    if (!enabled) return; // 翻訳OFF時は何もしない
+
+    // SPA遷移でも継続。管理画面以外（Webflow トップなど）から遷移してきた場合はここで開始する
     hookSpaNavigation(() => {
-      if (location.href === lastHref) return;
-      lastHref = location.href;
       if (!isWebflowAdminUI()) return;
+      if (!started) {
+        start();
+        return;
+      }
       domTranslator.reset();
       setTimeout(() => domTranslator.translateTree(document.body), 300);
     });
+
+    if (isWebflowAdminUI()) await start();
   }
 
   init();
