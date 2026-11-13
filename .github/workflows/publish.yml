@@ -11,6 +11,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # テストと用語集チェックに通らない版は公開しない
+      - name: Run tests
+        run: node --test
+
+      - name: Verify dictionary is normalized
+        run: |
+          node scripts/build_dictionary.js
+          git diff --exit-code translation_terms.csv
+
+      - name: Check tag matches manifest version
+        run: |
+          MANIFEST_VERSION=$(node -p "require('./manifest.json').version")
+          if [ "v${MANIFEST_VERSION}" != "${GITHUB_REF_NAME}" ]; then
+            echo "::error::タグ ${GITHUB_REF_NAME} と manifest.json の version ${MANIFEST_VERSION} が一致しません"
+            exit 1
+          fi
+
       - name: Create ZIP
         run: |
           zip -r extension.zip \

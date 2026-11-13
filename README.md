@@ -1,17 +1,18 @@
 # Webflow管理画面日本語化 Chrome拡張機能
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-インストール-brightgreen)](https://chromewebstore.google.com/detail/webflow-日本語化/efenpjcceehojemnphkinocffloghhon)
-![Version](https://img.shields.io/badge/version-1.1.0-blue)
-![Translations](https://img.shields.io/badge/翻訳用語数-2,019件-orange)
+![Version](https://img.shields.io/badge/version-1.2.0-blue)
+![Translations](https://img.shields.io/badge/翻訳用語数-2,559件-orange)
 
 ## 概要
 
 Webflowの管理画面（Designer/Editor等）の英語UIを、CSVで管理する用語集に基づき日本語化するChrome拡張機能です。
 
-- 英語UIテキストを日本語へ自動置換（テキストノード単位の完全一致）
+- 英語UIテキストを日本語へ自動置換（テキストノード単位の完全一致。大文字小文字・空白・末尾の「:」「…」「*」「(V)」の違いは吸収）
 - **ツールチップ等の属性も翻訳**（`title` / `aria-label` / `placeholder` / `alt`）
-- **動的な文言にも対応**（例: `5 minutes ago` → `5分前`、`12 items` → `12個のアイテム`）
-- 用語集（CSV）は自由に編集・拡張可能（現在 2,019 件）
+- **動的な文言にも対応**（例: `5 minutes ago` → `5分前`、`Edited 20 minutes ago` → `20分前に編集`、`5 instances` → `5個のインスタンス`）
+- ページ名・CMSコレクション名・フォルダ名・クラス名など、ユーザーが付けた名前は翻訳しない
+- 用語集（CSV）は自由に編集・拡張可能（現在 2,559 件）
 - **ポップアップUIで翻訳のON/OFF切り替えが可能**
 - オプションページで用語集一覧・翻訳プレビュー・翻訳統計が確認可能
 
@@ -45,6 +46,11 @@ Webflowの管理画面（Designer/Editor等）の英語UIを、CSVで管理す�
 - `translation_terms.csv` を直接編集し、英語-日本語のペアを追加・修正してください。
 - 編集後、拡張機能を「再読み込み」すると新しい翻訳が反映されます。
 - Googleスプレッドシート等で管理→CSVエクスポート→上書きも可能です。
+- 英文にカンマを含む場合は `"..."` で囲みます（例: `"If populated, this will be added to all of your pages.",入力すると…`）。
+- 数字や名前が入る定型文は、キーにプレースホルダーを書けます。
+  - `{n}` `{n2}` …: 数値（例: `{n} instances,{n}個のインスタンス`）
+  - `{x}`: 辞書・パターンで訳せる語句、または日付・時刻など数字を含む値（例: `Edited {x},{x}に編集` → 「20分前に編集」）
+  - `{s}`: 任意の文字列をそのまま埋め込む（例: `Upgrade to {s},{s}にアップグレード`）
 
 ## 開発者向け情報
 
@@ -86,9 +92,11 @@ Webflowの管理画面（Designer/Editor等）の英語UIを、CSVで管理す�
 
 4. **デプロイ実行**
    ```bash
-   git tag v1.0.3
-   git push origin v1.0.3
+   git tag v1.2.0
+   git push origin v1.2.0
    ```
+
+   公開前にテスト・用語集チェック・タグと manifest の版数一致を確認し、どれかに失敗すると公開しません。
 
 ### ディレクトリ構成
 
@@ -101,7 +109,7 @@ webflow-ja-extension/
 │   ├── translator.js        # 翻訳エンジン（完全一致＋動的パターン）
 │   ├── dom.js               # DOM走査・テキスト/属性翻訳・MutationObserver
 │   └── content.js           # エントリポイント（設定・統計・URL判定・初期化）
-├── translation_terms.csv    # 翻訳用語集（2,019件）
+├── translation_terms.csv    # 翻訳用語集（2,559件）
 ├── options.html / options.js  # オプションページ（用語集・統計・プレビュー）
 ├── popup.html / popup.js / popup.css  # ポップアップUI（翻訳ON/OFF）
 ├── scripts/build_dictionary.js  # 用語集の重複除去・正規化・新規追加
@@ -134,6 +142,19 @@ DOMの結合テスト（`tests/dom.test.js`）は `jsdom` がある場合のみ�
 npm install jsdom    # ローカルでDOMテストも実行したい場合
 node --test
 ```
+
+## 変更履歴
+
+### v1.2.0（2026-11-13）
+
+- 用語集を 2,019 件 → 2,559 件に拡充（Booost サイトの Dashboard・サイト設定・ワークスペース設定・Designer・CMS・Insights を巡回して未翻訳を収集）
+- 英文中のカンマで列がずれ、英語の断片に誤訳されていた 19 行を修正。訳の食い違い・表記ゆれを統一
+- 翻訳エンジン: Map で高速化、大文字小文字・空白・末尾記号・ショートカット表記を吸収、CSV のプレースホルダー付きキー（`{n}` `{x}` `{s}`）に対応
+- 入力欄の `placeholder` が除外セレクタ（`input`）に引っかかり翻訳されていなかった問題を修正
+- 分割テキストの翻訳で React が保持するテキストノードを差し替えないように変更
+- SPA の画面遷移検知を修正（content script からは `history.pushState` の差し替えが効かないため URL を監視）
+- ページ名・CMS コレクション名・変数コレクション名・クラス名トークン・ダッシュボードのフォルダ名/サイト名を翻訳対象外に追加
+- 公開ワークフローにテスト・用語集チェック・版数チェックを追加
 
 ## ライセンス
 

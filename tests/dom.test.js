@@ -90,3 +90,38 @@ test("DOM翻訳: 翻訳済み（日本語）テキストは再翻訳しない", 
   domTranslator.translateTree(document.body);
   assert.equal(document.querySelector("button").textContent, "公開");
 });
+
+test("DOM翻訳: 入力欄の placeholder・分割テキスト・ユーザー定義名", { skip }, () => {
+  const dom = new JSDOM(`<!DOCTYPE html><body>
+    <input id="search" placeholder="Search">
+    <span id="split"></span>
+    <div data-automation-id="folder-item" data-name="Archive"><span data-text="true" id="folder">Archive</span></div>
+    <div data-automation-id="left-sidebar-pages-list"><div data-automation-id="list-cell"><span id="page">Home</span></div></div>
+  </body>`);
+  const { window } = dom;
+  global.window = window;
+  global.document = window.document;
+  global.Node = window.Node;
+  global.NodeFilter = window.NodeFilter;
+  global.MutationObserver = window.MutationObserver;
+  for (const m of ["../src/constants.js", "../src/csv.js", "../src/translator.js", "../src/dom.js"]) {
+    delete require.cache[require.resolve(m)];
+    require(m);
+  }
+  const WFJA = globalThis.WFJA;
+  const split = document.getElementById("split");
+  const first = document.createTextNode("Page ");
+  split.append(first, document.createTextNode("settings"));
+
+  const translator = WFJA.translator.createTranslator({
+    Search: "検索", "Page settings": "ページ設定", Archive: "アーカイブ", Home: "ホーム",
+  });
+  WFJA.dom.createDomTranslator({ translator }).translateTree(document.body);
+
+  assert.equal(document.getElementById("search").getAttribute("placeholder"), "検索");
+  assert.equal(split.textContent, "ページ設定");
+  // React が保持するテキストノードは差し替えずに残す
+  assert.equal(split.firstChild, first);
+  assert.equal(document.getElementById("folder").textContent, "Archive");
+  assert.equal(document.getElementById("page").textContent, "Home");
+});

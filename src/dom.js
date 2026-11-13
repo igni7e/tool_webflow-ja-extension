@@ -31,13 +31,27 @@
 
     // ---- 除外判定 ----------------------------------------------------------
 
-    function matchesSkipSelector(el) {
+    function matchesSkipSelector(el, selector = C.SKIP_SELECTOR_COMBINED) {
       if (!el || el.nodeType !== Node.ELEMENT_NODE) return false;
       try {
-        return Boolean(el.closest(C.SKIP_SELECTOR_COMBINED));
+        if (el.closest(selector)) return true;
       } catch {
-        return false;
+        // 無効なセレクタは無視
       }
+      return isUserNamedLabel(el);
+    }
+
+    // ダッシュボードのフォルダ名・サイト名など、ユーザーが付けた名前は訳さない
+    // （例: フォルダ「Demo」「Archive」。Webflow のクラス名はハッシュ化されているため data 属性で判定）
+    function isUserNamedLabel(el) {
+      const named = el.closest("[data-name]");
+      if (named && named.getAttribute("data-name") === (el.textContent || "").trim()) return true;
+      const item = el.closest(C.NAMED_ITEM_SELECTOR);
+      if (item) {
+        const first = item.querySelector('[data-text="true"], [data-sc="Text"]');
+        if (first && (first === el || first.contains(el))) return true;
+      }
+      return false;
     }
 
     function shouldSkipTextNode(node) {
@@ -50,39 +64,34 @@
 
     // ---- テキストノード翻訳 -------------------------------------------------
 
-    // 親要素のtextContent全体で翻訳を試行（分割テキストノード対応）
+    // 親要素の複数テキストノードをつなげて翻訳する（分割テキストノード対応）
+    // 例: React が "Publish to " と "selected domains" を別ノードで描画している場合。
+    // parent.textContent を丸ごと書き換えると React が保持しているテキストノードが外れ、
+    // 以後の更新が反映されなくなるため、ノードは残したまま先頭に訳文・残りを空にする。
     function tryTranslateAsParentPhrase(textNode) {
       const parent = textNode.parentElement;
       if (!parent) return false;
       if (!C.PHRASE_CONTAINER_TAGS.has(parent.tagName)) return false;
       if (parent.childElementCount > 0) return false;
-      if (processedNodes.has(parent)) return false;
 
-      const fullText = parent.textContent;
-      if (!fullText) return false;
+      const nodes = Array.from(parent.childNodes).filter((n) => n.nodeType === Node.TEXT_NODE);
+      if (nodes.length < 2) return false; // 単一ノードは通常の翻訳に任せる
 
+      const fullText = nodes.map((n) => n.nodeValue).join("");
       const trimmed = fullText.trim();
       if (!trimmed || trimmed.length > C.MAX_PHRASE_LENGTH) return false;
+      if (isJa(trimmed)) return false;
 
-      if (isJa(trimmed)) {
-        processedNodes.add(parent);
-        return false;
-      }
+      const translated = translator.translate(fullText, { skipIfJapanese: true });
+      if (!translated) return false;
 
-      const translated = translator.translate(trimmed, {
-        skipIfJapanese: true,
-        caseInsensitive: false,
+      nodes.forEach((n, i) => {
+        n.nodeValue = i === 0 ? translated.text : "";
+        processedNodes.add(n);
+        nodeLastValueMap.set(n, n.nodeValue);
       });
-
-      if (translated) {
-        const leading = fullText.match(/^\s*/)[0];
-        const trailing = fullText.match(/\s*$/)[0];
-        parent.textContent = leading + translated.text.trim() + trailing;
-        onTranslate(translated.termCounts);
-        processedNodes.add(parent);
-        return true;
-      }
-      return false;
+      onTranslate(translated.termCounts);
+      return true;
     }
 
     function translateTextNode(node) {
@@ -100,10 +109,7 @@
       const originalText = node.nodeValue;
       if (!originalText || originalText.trim().length === 0) return;
 
-      const translated = translator.translate(originalText, {
-        skipIfJapanese: true,
-        caseInsensitive: false,
-      });
+      const translated = translator.translate(originalText, { skipIfJapanese: true });
 
       if (translated) {
         node.nodeValue = translated.text;
@@ -120,7 +126,7 @@
 
     function translateElementAttributes(el) {
       if (!el || el.nodeType !== Node.ELEMENT_NODE) return;
-      if (matchesSkipSelector(el)) return;
+      if (matchesSkipSelector(el, C.ATTR_SKIP_SELECTOR_COMBINED)) return;
 
       let lastValues = attrLastValueMap.get(el);
       for (const attr of C.TRANSLATABLE_ATTRIBUTES) {

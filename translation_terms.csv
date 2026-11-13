@@ -14,7 +14,7 @@ Editing,編集中
 Edited,編集済み
 Settings,設定
 Publish,公開
-Publishing,公開中
+Publishing,公開設定
 Published,公開済み
 Unpublish,非公開
 Unpublishing,非公開処理中
@@ -149,7 +149,7 @@ Unlocking,ロック解除中
 Unlocked,ロック解除済み
 Rename,名前を変更
 Renaming,名前を変更中
-Renamed,名前を変更済み
+Renamed,名前変更済み
 Properties,プロパティ
 Property,プロパティ
 Design,デザイン
@@ -333,7 +333,7 @@ Publish to,公開先
 Publish changes,変更を公開
 Stage for publish,公開用にステージング
 Staged,ステージング済み
-Staging,ステージング中
+Staging,ステージング
 Dashboard,ダッシュボード
 Marketplace,マーケットプレイス
 Overview,概要
@@ -440,7 +440,7 @@ Localization,ローカライゼーション
 Time zone,タイムゾーン
 Detect my time zone,タイムゾーンを検出
 Language code,言語コード
-Website password,ウェブサイトパスワード
+Website password,Webサイトパスワード
 Password protection,パスワード保護
 Showcase,ショーケース
 Creator credits,クリエイタークレジット
@@ -477,7 +477,7 @@ canonical URL,正規URL
 trailing slashes,末尾のスラッシュ
 duplicate content,重複コンテンツ
 Installed,インストール済み
-Configure,設定する
+Configure,設定
 environment,環境
 review changes,変更をレビュー
 privately,非公開で
@@ -486,7 +486,7 @@ domain,ドメイン
 alphanumeric,英数字
 dashes,ダッシュ
 Make staging private,ステージングを非公開にする
-restrict access,アクセスを制限
+restrict access,アクセス制限
 members,メンバー
 guests,ゲスト
 Enterprise plans,エンタープライズプラン
@@ -528,7 +528,7 @@ Forms,フォーム
 Backups,バックアップ
 Integrations,連携
 Custom Code,カスタムコード
-Visit website,ウェブサイトを訪問
+Visit website,Webサイトを訪問
 Transfer site,サイトを移行
 Archive site,サイトをアーカイブ
 Duplicate site,サイトを複製
@@ -549,7 +549,7 @@ users,ユーザー
 admins,管理者
 seats,シート
 branding,ブランディング
-added,追加された
+added,追加済み
 people,ユーザー
 On,オン
 Off,オフ
@@ -589,21 +589,21 @@ Reviewer,レビュアー
 Designer,デザイナー
 guest,ゲスト
 legacy,レガシー
-Manage,管理する
-edit,編集する
+Manage,管理
+edit,編集
 prevent,防止
 turning,切り替え
 features,機能
-replace,置き換える
+replace,置換
 enabled,有効
 available,利用可能
 Users,ユーザー
 log into,ログインする
-adding,追加
+adding,追加中
 example,例
 end,終わり
 their,彼らの
-website,ウェブサイト
+website,Webサイト
 Choose publish destination,公開先を選択
 Advanced options,詳細オプション
 selected domains,選択したドメイン
@@ -804,7 +804,7 @@ Discount,割引
 Discounts,割引
 Coupon,クーポン
 Coupons,クーポン
-Order,注文
+Order,順序
 Orders,注文
 Customer,顧客
 Customers,顧客
@@ -960,7 +960,7 @@ V Flex,縦フレックス
 H Flex,横フレックス
 Quick Stack,クイックスタック
 Columns,カラム
-Column,カラム
+Column,列
 Row,行
 Cell,セル
 Button,ボタン
@@ -1278,7 +1278,7 @@ Min Content,最小コンテンツ
 Min content,最小コンテンツ
 Max Content,最大コンテンツ
 Max content,最大コンテンツ
-Z-Index,Z インデックス
+Z-Index,Zインデックス
 Z-index,Zインデックス
 Overflow X,横オーバーフロー
 Overflow Y,縦オーバーフロー
@@ -1292,7 +1292,6 @@ Min height,最小高さ
 Max Height,最大高さ
 Max height,最大高さ
 px,px
-%,％
 em,em
 rem,rem
 vw,vw
@@ -1659,7 +1658,6 @@ Style elements and build layouts,要素をスタイリングしレイアウト�
 Build pages with components and edit content,コンポーネントでページを構築しコンテンツを編集
 This is the site's title within Webflow.,これはWebflow内のサイトタイトルです。
 You can update what visitors see in search results in each page's settings.,各ページの設定で検索結果に表示される内容を更新できます。
-Upload a 32 x 32 pixel ICO,PNG
 Upload a 256 x 256 pixel webclip image.,256x256ピクセルのウェブクリップ画像をアップロードしてください。
 This icon shows up when your website link is saved to an iPhone home screen.,このアイコンはWebサイトのリンクがiPhoneのホーム画面に保存されたときに表示されます。
 Choose the time zone from this list,このリストからタイムゾーンを選択してください
@@ -1684,10 +1682,8 @@ Upgrade this site to a CMS or Business plan to add legacy Editor users.,CMSま�
 The legacy Editor features the Webflow logo by default,レガシーエディターにはデフォルトでWebflowロゴが表示されます
 but you can replace it with your logo or your client's logo.,あなたのロゴまたはクライアントのロゴに置き換えることができます。
 Image should be 300 x 80px.,画像は300x80pxにしてください。
-SVG or transparent PNG recommended. GIF,JPG also supported.
 Configure an environment to review changes privately or with public URLs.,変更を非公開またはパブリックURLでレビューする環境を設定します。
 Learn more about configuring and using staging.,ステージングの設定と使用方法の詳細
-Must be alphanumeric (A-Z,0-9) with dashes between words.
 Turn on private staging to restrict access to members and guests of this Workspace,プライベートステージングを有効にしてワークスペースのメンバーとゲストにアクセスを制限
 Private staging is only available on Enterprise plans.,プライベートステージングはエンタープライズプランでのみ利用可能です。
 Please contact sales for offerings.,オファリングについては営業にお問い合わせください。
@@ -1703,13 +1699,11 @@ This helps preserve your SEO ranking.,これによりSEOランキングを維持
 Learn more about wildcard redirect rules.,ワイルドカードリダイレクトルールの詳細
 Load JS async,JSを非同期で読み込む
 Per-page CSS,ページ別CSS
-To upload a custom SSL certificate,you need an Enterprise plan.
 No custom SSL certificates have been added to this site yet.,このサイトにはまだカスタムSSL証明書が追加されていません。
 All site projects start on a Starter plan.,すべてのサイトプロジェクトはスタータープランから始まります。
 You can upgrade your plan at any time,いつでもプランをアップグレードできます
 to publish to add a custom domain,カスタムドメインを追加して公開
 get more traffic,より多くのトラフィックを獲得
-and unlock additional features to create more powerful,custom websites.
 Billed monthly,月額請求
 Billed yearly,年額請求
 Save up to 22% with yearly billing,年間請求で最大22%節約
@@ -1721,7 +1715,6 @@ Dedicated customer success and support team at every step.,専任のカスタマ
 Advanced collaboration,高度なコラボレーション
 Supercharged workflows and permissions for large teams.,大規模チーム向けの強化されたワークフローと権限。
 Enterprise-ready scale,エンタープライズ対応のスケール
-Scale traffic,content
 Security and compliance,セキュリティとコンプライアンス
 Enterprise-grade security to meet your IT and data requirements.,IT要件とデータ要件を満たすエンタープライズグレードのセキュリティ。
 All prices are in USD with applicable taxes added at checkout.,すべての価格はUSDで、チェックアウト時に適用される税金が加算されます。
@@ -1781,7 +1774,6 @@ Learn more about bandwidth,帯域幅の詳細
 Site usage,サイト使用量
 Plan usage,プラン使用量
 No Cloud usage yet,まだCloud使用量なし
-Host apps,not just websites
 Connect a Github repository to your Webflow site to get started.,開始するにはGitHubリポジトリをWebflowサイトに接続してください。
 Open Webflow Cloud,Webflow Cloudを開く
 You can set SEO meta titles and descriptions,SEOメタタイトルと説明を設定できます
@@ -1792,7 +1784,6 @@ Indexing is disabled,インデックスが無効
 If indexing is disabled,インデックスが無効の場合
 a unique robots.txt will be published only on the subdomain,ユニークなrobots.txtがサブドメインのみに公開されます
 telling search engines to ignore the domain.,検索エンジンにドメインを無視するよう指示します。
-If populated,this will be added to all of your pages.
 Traffic control,トラフィック制御
 Allow search engine crawlers,検索エンジンクローラーを許可
 Allow AI bots,AIボットを許可
@@ -1820,7 +1811,6 @@ and append the page's unique URL slug after it.,その後にページ固有のUR
 Upload llms.txt file,llms.txtファイルをアップロード
 Upload your llms.txt file here.,llms.txtファイルをここにアップロード。
 This file helps control how AI models and language learning models interact with your site.,このファイルはAIモデルと言語学習モデルがサイトとどのようにやり取りするかを制御します。
-To manage reCAPTCHA,spam filtering
 View submission data for all the forms in your site.,サイト内のすべてのフォームの送信データを表示。
 Form notification settings are now available on the canvas with every form.,フォーム通知設定がキャンバス上の各フォームで利用可能になりました。
 Learn more about forms,フォームの詳細
@@ -1833,10 +1823,8 @@ Choose font from list,リストからフォントを選択
 Select Google Font...,Google Fontを選択...
 Preview the fonts on Google Fonts.,Google Fontsでフォントをプレビュー。
 Fonts not in this list are already available in Webflow.,このリストにないフォントはすでにWebflowで利用可能です。
-Once you add a font here,refresh your site to make it available in the fonts list.
 Upload custom font file(s),カスタムフォントファイルをアップロード
 Add custom fonts to your font list.,フォントリストにカスタムフォントを追加。
-For maximum browser support,upload in TTF
 Use Adobe Fonts in this Webflow site by adding the API token below.,下にAPIトークンを追加してこのWebflowサイトでAdobe Fontsを使用。
 You can also add a token for all of your sites in Workspace settings > Integrations.,ワークスペース設定 > 連携ですべてのサイトにトークンを追加することもできます。
 Adobe Fonts API token for this site,このサイトのAdobe Fonts APIトークン
@@ -1874,24 +1862,19 @@ If you want to connect your marketing automation platform to your Webflow sites,
 please contact sales to learn more about our Enterprise offerings.,エンタープライズオファリングの詳細は営業にお問い合わせください。
 No marketing integrations have been added to this site yet.,このサイトにはまだマーケティング連携が追加されていません。
 Prevent spam submissions or bots from filling out forms on your site.,スパム送信やボットがサイトのフォームに入力するのを防止。
-If valid submissions get marked as spam,you can turn this off.
 You'll have to republish your site if you change the bot blocking setting.,ボットブロック設定を変更した場合はサイトを再公開する必要があります。
 Bots are not being blocked,ボットはブロックされていません
 Spam is being filtered,スパムはフィルタリングされています
-Ensure your forms are only submitted by humans,and avoid spam.
 reCAPTCHA v2 site key,reCAPTCHA v2サイトキー
 Register for a new key.,新しいキーを登録。
 reCAPTCHA v2 secret key,reCAPTCHA v2シークレットキー
 Enable reCAPTCHA,reCAPTCHAを有効化
 reCAPTCHA validation is disabled for all forms on this site,このサイトのすべてのフォームでreCAPTCHA検証が無効
-If enabled,all forms will be validated.
 Forms that do not contain a reCAPTCHA field will fail to submit.,reCAPTCHAフィールドのないフォームは送信に失敗します。
 Restrict uploaded file access,アップロードファイルアクセスを制限
 Turn this on to restrict access to files uploaded through your site's forms,サイトのフォームを通じてアップロードされたファイルへのアクセスを制限するにはこれを有効化
 to people who are logged in to your site,サイトにログインしているユーザーに
-i.e.,you
 Turn it off to allow public access to files,ファイルへのパブリックアクセスを許可するにはオフに
-which you might need for certain publishing formats or integrations,like Zapier.
 Login is required,ログインが必要
 Generate API token,APIトークンを生成
 A site API token allows your site to interact with Webflow's REST API,サイトAPIトークンでサイトとWebflowのREST APIがやり取り可能
@@ -1906,7 +1889,6 @@ Every collaborator can determine if they want to run all custom code when they o
 That won't affect this global setting.,これはグローバル設定に影響しません。
 Add custom HTML & CSS,カスタムHTML & CSSを追加
 Add custom code for more flexibility.,カスタムコードを追加してより柔軟に。
-Save your progress by pressing Cmd+Shift+S on Mac,or Ctrl+Shift+S on Windows.
 Custom code is not validated.,カスタムコードは検証されません。
 Incorrect code may cause issues with the page when published or previewed.,不正なコードはページの公開時またはプレビュー時に問題を引き起こす可能性があります。
 Head code,ヘッドコード
@@ -1920,8 +1902,6 @@ Note: This is an advanced feature that can cause site issues if you're doing som
 Use at your own risk.,自己責任でご使用ください。
 Href prefix,Hrefプレフィックス
 Set a prefix for internal page links.,内部ページリンクのプレフィックスを設定。
-This won't affect external,mail or phone links
-or links that get their value from the link,email
 SQLite,SQLite
 Key-value store,キーバリューストア
 Object storage,オブジェクトストレージ
@@ -2007,7 +1987,7 @@ Subtotal,小計
 Total,合計
 Refund,返金
 Fulfillment,フルフィルメント
-Role,役割
+Role,ロール
 Permissions,権限
 Activity,アクティビティ
 Forgot password?,パスワードをお忘れですか？
@@ -2018,3 +1998,563 @@ Description,説明
 Time,時刻
 Details,詳細
 Other,その他
+"Upload a 32 x 32 pixel ICO, PNG, GIF, or JPG to display in browser tabs.",ブラウザタブに表示する32x32ピクセルのICO、PNG、GIF、またはJPGをアップロードしてください。
+"Display ""Made in Webflow"" badge",「Made in Webflow」バッジを表示
+"SVG or transparent PNG recommended. GIF, JPG also supported.",SVGまたは透過PNGを推奨。GIF、JPGもサポート。
+"Must be alphanumeric (A-Z, 0-9) with dashes between words.",英数字(A-Z、0-9)とダッシュで構成する必要があります。
+"To upload a custom SSL certificate, you need an Enterprise plan.",カスタムSSL証明書をアップロードするにはエンタープライズプランが必要です。
+"and unlock additional features to create more powerful, custom websites.",より強力なカスタムWebサイトを作成する追加機能をアンロック。
+"Scale traffic, content, and performance to your needs.",トラフィック、コンテンツ、パフォーマンスをニーズに合わせて拡張。
+"Host apps, not just websites, with Webflow Cloud.",Webflow CloudでWebサイトだけでなくアプリもホスト。
+"If populated, this will be added to all of your pages.",入力すると、すべてのページに追加されます。
+"If populated, sitemap.xml will be added to all of your custom domains.",入力すると、すべてのカスタムドメインにsitemap.xmlが追加されます。
+"To manage reCAPTCHA, spam filtering, bot protection or file uploads, go to the Integrations tab.",reCAPTCHA、スパムフィルタリング、ボット保護、ファイルアップロードを管理するには連携タブに移動。
+"Once you add a font here, refresh your site to make it available in the fonts list.",ここにフォントを追加したらサイトを更新してフォントリストで利用可能にします。
+"For maximum browser support, upload in TTF, OTF, EOT and WOFF formats.",最大限のブラウザサポートのためTTF、OTF、EOT、WOFF形式でアップロード。
+"Enable ""delay for cookie consent"" and add a cookie consent form to your site.",「Cookie同意のための遅延」を有効化してサイトにCookie同意フォームを追加。
+"If valid submissions get marked as spam, you can turn this off.",有効な送信がスパムとしてマークされた場合はこれをオフにできます。
+"Ensure your forms are only submitted by humans, and avoid spam.",フォームが人間によってのみ送信されることを確認しスパムを回避。
+"If enabled, all forms will be validated.",有効にするとすべてのフォームが検証されます。
+"i.e., you, your client, and collaborators.",つまりあなた、クライアント、コラボレーター。
+"which you might need for certain publishing formats or integrations, like Zapier.",Zapierなどの特定の公開フォーマットや連携に必要な場合があります。
+"Save your progress by pressing Cmd+Shift+S on Mac, or Ctrl+Shift+S on Windows.",MacではCmd+Shift+S、WindowsではCtrl+Shift+Sを押して進行状況を保存。
+"This won't affect external, mail or phone links",外部リンク、メールリンク、電話リンクには影響しません
+"or links that get their value from the link, email, or phone fields.",またはリンク、メール、電話フィールドから値を取得するリンク。
+Publishing...,公開中…
+Publishing…,公開中…
+All projects,すべてのプロジェクト
+Sites,サイト
+Partner program,パートナープログラム
+New Project,新規プロジェクト
+projects,プロジェクト
+project,プロジェクト
+Open site in Webflow,Webflowでサイトを開く
+View,表示
+site,サイト
+What's new at Webflow,Webflowの新機能
+Install now,今すぐインストール
+See all updates,すべてのアップデートを見る
+Search all projects,すべてのプロジェクトを検索
+Dark,ダーク
+Upload icon,アイコンをアップロード
+Upload a square image to generate all icon sizes.,正方形の画像をアップロードすると、すべてのサイズのアイコンが生成されます。
+Localize,ローカライズ
+"To set a language code, add a primary locale in your site's",言語コードを設定するには、メインのロケールを次で追加してください:
+Localize settings,ローカライズ設定
+Showcase site,サイトをショーケースに掲載
+"Showcased sites will appear on your public profile, and in the",ショーケースに掲載したサイトは、公開プロフィールと次の場所に表示されます:
+under Made in Webflow.,（Made in Webflow 内）
+You can select up to 3 profile handles. Please ensure the site owner approves of showcasing this site before tagging a creator.,プロフィールハンドルは3つまで選択できます。クリエイターをタグ付けする前に、サイトオーナーが掲載を承認していることを確認してください。
+Add the profile handles of creators who have worked on this site. Creators tagged here will be able to display this site on their Webflow profile.,このサイトに携わったクリエイターのプロフィールハンドルを追加します。タグ付けされたクリエイターは、自分のWebflowプロフィールにこのサイトを表示できます。
+Shared Workspace template,共有ワークスペーステンプレート
+This site belongs to,このサイトの所属:
+"(Files, fonts, and backups)",（ファイル・フォント・バックアップ）
+Pages created,ページを作成
+Site published to staging,ステージングに公開
+Site published to staging and production,ステージングと本番に公開
+Redirect added: {s},リダイレクトを追加: {s}
+e.g. en,例: en
+"Manage team members and guest access to this site, and set their site role.",このサイトのチームメンバーとゲストのアクセスを管理し、サイトロールを設定します。
+Learn how to manage site roles,サイトロールの管理方法
+Everyone in the Workspace can view,ワークスペースの全員が閲覧可能
+(you),（あなた）
+Clients,クライアント
+Client,クライアント
+Invite a client,クライアントを招待
+Search members...,メンバーを検索…
+Webflow.io domain,Webflow.ioドメイン
+Private staging is only available on Enterprise plans. Please contact,非公開ステージングはEnterpriseプランでのみ利用できます。詳しくはお問い合わせください:
+for offerings.,（提供内容について）
+Add your domain(s) below or buy a domain. Need help?,下にドメインを追加するか、ドメインを購入してください。お困りですか？
+"It's best practice to use the 'www' version of your site as the default. Using the root domain may not be supported by your DNS provider, and requires manual setup.",サイトのデフォルトには「www」付きのドメインを使うのがベストプラクティスです。ルートドメインはDNSプロバイダーによっては対応しておらず、手動設定が必要です。
+Published {x},{x}に公開
+Remove default,デフォルトを解除
+Make default,デフォルトに設定
+Redirect old URLs to new ones manually or in bulk with a CSV file. You can also redirect multiple URLs to a single one with wild card rules. This helps preserve your SEO ranking.,古いURLを新しいURLへ、手動またはCSVファイルで一括リダイレクトします。ワイルドカードルールで複数のURLを1つにまとめることもできます。SEOの評価を維持するのに役立ちます。
+"To upload a custom SSL certificate, you need an Enterprise plan. To learn more,",カスタムSSL証明書をアップロードするにはEnterpriseプランが必要です。詳しくは
+You can set,次を設定できます:
+SEO meta titles and descriptions,SEOのメタタイトルと説明
+", as well as",、および
+Open Graph info,Open Graph情報
+Indexing of,インデックス登録:
+"If indexing is disabled, a unique robots.txt will be published only on the",インデックス登録を無効にすると、次の場所にのみ専用のrobots.txtが公開されます:
+subdomain,サブドメイン
+telling search engines to ignore the domain. (The actual content is: User-Agent: * Disallow: /),（検索エンジンにこのドメインを無視させます。実際の内容: User-Agent: * Disallow: /）
+"If populated, this will be added to all of your pages. The limit is 500 KiB. Learn more at",入力すると、すべてのページに追加されます。上限は500 KiBです。詳しくは次を参照:
+Enabling this removes the automatically generated sitemap.xml address within your robots.txt file. You can input a custom sitemap.xml below.,有効にすると、robots.txt内の自動生成されたsitemap.xmlのアドレスが削除されます。カスタムsitemap.xmlは下で入力できます。
+Automatically update sitemap.xml when site is published.,サイト公開時にsitemap.xmlを自動更新します。
+Use your global canonical URL as the base URL for each,各エントリのベースURLにグローバルcanonical URLを使用:
+Boost your SEO by automatically updating your sitemap whenever you publish your site. View your sitemap at,サイトを公開するたびにサイトマップを自動更新してSEOを強化します。サイトマップの確認先:
+. You'll still need to submit your sitemap to Google.,。サイトマップはGoogleに別途送信する必要があります。
+"Verify your site with Google to get access to your site's Google search data, and submit your sitemap for indexing.",Googleでサイトを確認すると、サイトの検索データにアクセスでき、サイトマップをインデックス登録用に送信できます。
+Visit,アクセス
+to add and verify your site.,でサイトを追加・確認してください。
+Set the global URL to use in the canonical tag for this site so search engines know the proper URL to index and don't serve duplicate content.,このサイトのcanonicalタグで使うグローバルURLを設定します。検索エンジンが正しいURLをインデックスし、重複コンテンツを避けられます。
+All site pages will use this global canonical tag URL as their starting point and append the page's unique URL slug after it.,すべてのページはこのグローバルcanonical URLを起点に、各ページ固有のURLスラッグを付け加えます。
+Upload your llms.txt file here. This file helps control how AI models and language learning models interact with your site.,llms.txtファイルをここにアップロードします。AIモデルや言語モデルがサイトとどう関わるかを制御するのに役立ちます。
+Default form email notifications,フォーム通知メールのデフォルト設定
+These settings apply as defaults to all forms on this site. You can override them per form in the designer.,この設定はサイト内のすべてのフォームにデフォルトとして適用されます。Designerでフォームごとに上書きできます。
+Sender name,送信者名
+This will be used as the sender name in the form notification emails.,フォーム通知メールの送信者名として使われます。
+Note: the sender email address is,注: 送信元メールアドレスは次のとおりです:
+Send form submissions to,フォーム送信の通知先
+"Avoid using role-based emails (info@, sales@, support@ addresses) as they are often blocked by email delivery systems.",役割ベースのアドレス（info@、sales@、support@など）はメール配信システムにブロックされやすいため、使用を避けてください。
+"Add the list of emails you want to send form submissions to, separated by commas.",通知を送るメールアドレスをカンマ区切りで入力してください。
+Subject line,件名
+You can include the siteName and formName variables.,siteName と formName の変数を使えます。
+Form notification emails will have a subject line that starts with,フォーム通知メールの件名は次で始まります:
+. Upgrade to a paid plan to remove Webflow branding.,。有料プランにアップグレードするとWebflowの表記を削除できます。
+Available variables are:,使える変数:
+Reply to address,返信先アドレス
+Enter the email address that should receive replies to the form notification emails.,フォーム通知メールへの返信を受け取るメールアドレスを入力してください。
+Email template,メールテンプレート
+"You can use HTML formatting. You can also include the variables siteName, formName, formData, and formDashboardUrl.",HTML形式を使えます。変数 siteName、formName、formData、formDashboardUrl も使えます。
+This is the body of the email.,メールの本文です。
+"To manage reCAPTCHA, spam filtering, bot protection or file uploads, go to the",reCAPTCHA、スパムフィルター、ボット対策、ファイルアップロードを管理するには、次のタブへ移動してください:
+"To manage reCAPTCHA, spam filtering, bot protection or file uploads, go to the Apps & Integrations tab.",reCAPTCHA、スパムフィルター、ボット対策、ファイルアップロードは「アプリと連携」タブで管理できます。
+View submission data for all the forms in your site. Form notification settings are now available on the canvas with every form.,サイト内のすべてのフォームの送信データを確認できます。フォーム通知の設定は、キャンバス上の各フォームで行えるようになりました。
+Preview the fonts on,次でフォントをプレビュー:
+". Once you add a font here, refresh your site to make it available in the fonts list.",。ここでフォントを追加したら、サイトを再読み込みするとフォント一覧で使えるようになります。
+Custom fonts,カスタムフォント
+Learn more about custom fonts,カスタムフォントについて詳しく
+"Add custom fonts to your font list. For maximum browser support, upload in TTF, OTF, EOT and WOFF formats.",カスタムフォントをフォント一覧に追加します。幅広いブラウザに対応するため、TTF・OTF・EOT・WOFF形式でアップロードしてください。
+Use Adobe Fonts in this Webflow site by adding the API token below. You can also add a token for all of your sites in Workspace settings >,下にAPIトークンを追加すると、このサイトでAdobe Fontsを使えます。すべてのサイト用のトークンは次で追加することもできます: ワークスペース設定 >
+Integrations.,連携
+Create and retrieve Adobe Fonts API tokens on your,Adobe Fonts APIトークンの作成・取得:
+Adobe Fonts account page,Adobe Fontsのアカウントページ
+New backup,新しいバックアップ
+Webflow automatically creates site backups as you work. You can also create a manual backup at any time. The current version is also backed up when you restore an older version.,作業中、Webflowは自動でサイトのバックアップを作成します。手動バックアップもいつでも作成できます。古いバージョンを復元するときは、現在のバージョンもバックアップされます。
+{n} mos ago,{n}か月前
+in {n} days,{n}日後
+Edited {x},{x}に編集
+{n} styles,{n}スタイル
+{n} elements,{n}要素
+{x} · {n} pages · {n2} styles · {n3} elements,{x} · {n}ページ · {n2}スタイル · {n3}要素
+Maintenance backup,メンテナンスバックアップ
+Load more backups,さらにバックアップを読み込む
+Google tag IDs,GoogleタグID
+Add additional tag ID,タグIDを追加
+More information about the Google tag,Googleタグの詳細は
+here,こちら
+Find your tag ID,タグIDを確認
+Track and optimize your ad performance with the Google Ads for Webflow App,Google Ads for Webflowアプリで広告の成果を測定・最適化できます
+Create a,次を作成:
+and paste it here. Check out the,し、ここに貼り付けてください。詳しくは
+Maps Guide,マップガイド
+to learn more about adding maps to your site.,でサイトへの地図の追加方法を確認できます。
+Create a Meta Pixel,Meta Pixelを作成
+and paste it here.,し、ここに貼り付けてください。
+Delay loading the Meta Pixel until after visitors have accepted your cookie policy. You must turn this on to be GDPR-compliant. Learn how to,訪問者がCookieポリシーに同意するまでMeta Pixelの読み込みを遅らせます。GDPRに準拠するにはオンにする必要があります。方法:
+create a Meta Pixel cookie consent form,Meta Pixel用のCookie同意フォームを作る
+App,アプリ
+Action needed,対応が必要
+"If you want to connect your marketing automation platform to your Webflow sites, please",マーケティングオートメーションをWebflowサイトに接続したい場合は、
+to learn more about our Enterprise offerings.,Enterpriseプランについてお問い合わせください。
+reCAPTCHA validation,reCAPTCHA検証
+for all forms on this site,（サイト内のすべてのフォーム）
+A site API token allows your site to interact with,サイトAPIトークンを使うと、サイトが次と連携できます:
+Webflow's REST API,WebflowのREST API
+View permissions,権限を表示
+Revoke,取り消す
+Generated,生成日
+Never used,未使用
+Token does not expire,有効期限なし
+Manage your webhooks here or through,Webhookはここまたは次で管理できます:
+our API,WebflowのAPI
+"Should start with a 'G-, GT-, AW-, or GTM-'",G-、GT-、AW-、GTM- のいずれかで始まる必要があります
+The effects of all the custom code on your site,サイトのすべてのカスタムコードは、
+will be shown,実行されます
+in Preview and Commenting modes by default.,（デフォルトでプレビューとコメントモード）。
+Every collaborator can determine if they want to run all custom code when they open Preview. That won't affect this global setting.,各共同編集者は、プレビューを開くときにカスタムコードを実行するかを選べます。このサイト全体の設定には影響しません。
+Paste custom code to embed on your site.,サイトに埋め込むカスタムコードを貼り付けます。
+Custom code is not validated and may cause issues when published.,カスタムコードは検証されないため、公開時に問題が起きる場合があります。
+Add code at the end of the,次のタグの末尾にコードを追加:
+Prettify,整形
+Line wrapping,行の折り返し
+Code added by Apps,アプリが追加したコード
+Updated on,更新日
+View script,スクリプトを表示
+Manage App,アプリを管理
+The HTML base tag (,HTMLのbaseタグ（
+) specifies the base URL to use for all relative URLs contained within a document.,）は、ドキュメント内のすべての相対URLの基準となるURLを指定します。
+Note: This is an advanced feature that can cause site issues if you're doing something unsupported by Webflow's hosting. Use at your own risk.,注: 上級者向けの機能です。Webflowのホスティングが対応していない使い方をすると、サイトに問題が起きる可能性があります。自己責任で使用してください。
+"Set a prefix for internal page links. This won't affect external, mail or phone links, or links that get their value from the link, email, or phone fields.",内部ページリンクのプレフィックスを設定します。外部リンク・メール・電話リンクや、リンク・メール・電話フィールドから値を取るリンクには影響しません。
+Site plans,サイトプラン
+Ecommerce site,Eコマースサイト
+Add ons,アドオン
+Add-on,アドオン
+/ mo,/ 月
+{n} static pages,静的ページ {n}
+{n} CMS collections,CMSコレクション {n}
+{n} CMS items,CMSアイテム {n}
+{n} form submissions (lifetime),フォーム送信 {n}件（累計）
+Hosting,ホスティング
+{n} GB bandwidth,帯域幅 {n} GB
+Webflow Cloud app hosting,Webflow Cloudアプリホスティング
+billed,請求
+yearly,年払い
+Best for launching a simple site.,シンプルなサイトの公開に最適。
+Upgrade to {s},{s}にアップグレード
+Downgrade to {s},{s}にダウングレード
+Custom domain,カスタムドメイン
+Unlimited form submissions,フォーム送信 無制限
+Surge protection,サージ保護
+A content-rich site,コンテンツが豊富なサイト向け
+Site search,サイト内検索
+Additional features,追加機能
+All Site features,サイトの全機能
+Feature,機能
+Remove Webflow badge,Webflowバッジを削除
+Site Features,サイト機能
+Legacy Editor users,レガシーエディターのユーザー
+Unlimited,無制限
+CMS items,CMSアイテム
+CMS collections,CMSコレクション
+Scheduled publishing,予約公開
+Traffic,トラフィック
+Regional,リージョナル
+Global,グローバル
+Bandwidth,帯域幅
+Uptime,稼働率
+DDoS protection,DDoS保護
+Credit card,クレジットカード
+Customer support,カスタマーサポート
+Training,トレーニング
+Billing and hosting for {s},{s} の請求とホスティング
+Manage Add-on,アドオンを管理
+To update the invoice settings for,次の請求書設定を更新するには:
+", visit the main billing page for your workspace,",、ワークスペースのメイン請求ページにアクセスしてください。
+Plan details,プラン詳細
+Frequency,頻度
+Total charged,請求合計
+Paid,支払い済み
+Monthly,月払い
+{n} line items,{n}件の明細
+{x} USD / year + tax,{x} USD / 年 + 税
+{x} USD / year,{x} USD / 年
+{x} USD / month,{x} USD / 月
+Log in to GitHub,GitHubにログイン
+New app,新しいアプリ
+Source,ソース
+No apps found,アプリが見つかりません
+Search {s}...,{s}を検索…
+Workspace name,ワークスペース名
+Guest display name,ゲスト表示名
+This name appears when you join a Workspace as a guest. You cannot remove it if you are an active guest.,ゲストとしてワークスペースに参加したときに表示される名前です。アクティブなゲストの間は削除できません。
+You can upload images up to 256x256.,256x256までの画像をアップロードできます。
+Default Workspace,デフォルトのワークスペース
+Display this Workspace after logging in,ログイン後にこのワークスペースを表示
+Enable Webflow AI,Webflow AIを有効にする
+Allow users in this Workspace to use,このワークスペースのユーザーに次の使用を許可:
+features.,機能
+Site access settings,サイトアクセス設定
+Each site has an access setting that determines who can view it.,各サイトには、閲覧できる人を決めるアクセス設定があります。
+Learn more about site access.,サイトアクセスについて詳しく
+Default site access,デフォルトのサイトアクセス
+Site visibility,サイトの公開範囲
+Update all sites,すべてのサイトを更新
+Sharing permissions,共有の権限
+Reviewer invites,レビュアーの招待
+Allow existing users to invite new Reviewers and share sites in this Workspace. Reviewers are able to view and leave comments.,既存ユーザーが新しいレビュアーを招待し、このワークスペースのサイトを共有できるようにします。レビュアーは閲覧とコメントができます。
+This setting is only available on Enterprise plans. Please,この設定はEnterpriseプランでのみ利用できます。
+Workspace ID,ワークスペースID
+Slug,スラッグ
+Archive Workspace,ワークスペースをアーカイブ
+Learn how to manage seats,シートの管理方法
+assign roles,ロールの割り当て
+Ensure enterprise-grade security & compliance at every level with,次の機能で、あらゆるレベルでエンタープライズ級のセキュリティとコンプライアンスを確保:
+custom roles,カスタムロール
+Manage seats,シートを管理
+Invite pending,招待保留中
+Agency or Freelancer guests,Agency・Freelancerのゲスト
+{n} available,残り{n}
+Invite guest,ゲストを招待
+"Invite guests to collaborate on your Workspace sites for free. To accept an invite, guests need to be on an Agency or Freelancer Workspace plan.",ワークスペースのサイトにゲストを無料で招待して共同作業できます。招待を受けるには、ゲストがAgencyまたはFreelancerのワークスペースプランに加入している必要があります。
+Learn more about guest permissions,ゲストの権限について詳しく
+Easily collaborate with your service provider for free,制作会社と無料で簡単に共同作業
+Give your agency and freelancers access to join your Workspace as guests to collaborate in your sites. You'll be able control their access permissions.,制作会社やフリーランサーをゲストとしてワークスペースに招待し、サイトで共同作業できます。アクセス権限はあなたが管理できます。
+Workspace plans,ワークスペースプラン
+For in-house teams,社内チーム向け
+For freelancers & agencies,フリーランス・制作会社向け
+Save up to {x} with yearly billing,年払いで最大{x}お得
+For those getting started and learning Webflow,Webflowを始めて学ぶ方向け
+{n} webflow.io staging sites,webflow.ioステージングサイト {n}
+Agency & Freelancer guests,Agency・Freelancerゲスト
+Includes 1 full seat,フルシート1つを含む
+For those with a few clients,クライアントが少数の方向け
+Full CMS access on staged sites,ステージングサイトでCMSをフル利用
+Free guest access in client Workspaces,クライアントのワークスペースに無料でゲスト参加
+Client payments,クライアント決済
+1 Shared Library,共有ライブラリ 1
+For those with many clients,クライアントが多い方向け
+You are on {s},現在のプラン: {s}
+Unlimited webflow.io staging sites,webflow.ioステージングサイト 無制限
+Advanced roles and permissions,高度なロールと権限
+Unlimited Shared Libraries,共有ライブラリ 無制限
+View plan comparison,プランを比較
+Add seats,シートを追加
+Add unlimited team members to your Workspace.,ワークスペースにチームメンバーを無制限に追加できます。
+{n} included,{n}件込み
+Full,フル
+From ${x},${x}から
+Design full sites or manage admin settings.,サイト全体のデザインや管理設定を行えます。
+Limited,制限付き
+Edit content or build pages with components.,コンテンツ編集やコンポーネントでのページ作成を行えます。
+{n} added,{n}件追加済み
+Invite reviewers and commenters from the,次のページからレビュアーやコメント投稿者を招待:
+View seat comparison,シートを比較
+AI Credit Packs,AIクレジットパック
+{n} Credits,{n}クレジット
+Power AI features across your workspace.,ワークスペース全体でAI機能を利用できます。
+Add credits,クレジットを追加
+credits included,クレジット込み
+Generate components from your design system,デザインシステムからコンポーネントを生成
+Build layouts powered by your CMS,CMSと連動したレイアウトを作成
+Create full apps with logic and data,ロジックとデータを使ったアプリを作成
+Redesign pages using your existing styles,既存のスタイルでページを再デザイン
+"Generate clean, production code",本番用のきれいなコードを生成
+Rewrite long content in one click,長いコンテンツをワンクリックで書き換え
+All prices are in USD and are charged per member with applicable taxes added at checkout.,価格はすべて米ドルで、メンバーごとに請求されます。該当する税金はチェックアウト時に加算されます。
+AI Usage,AI使用量
+Manage AI credit usage across this Workspace.,このワークスペースのAIクレジット使用量を管理します。
+Credit balance,クレジット残高
+{n}% remaining,残り{n}%
+{n} / {n2} credits remaining,残り {n} / {n2} クレジット
+Your monthly credits reset,毎月のクレジットのリセット:
+Features Used,使用した機能
+Current billing cycle,現在の請求期間
+Credits,クレジット
+% of total,全体比
+Generate CMS Collection items,CMSコレクションアイテムを生成
+Improve SEO & AEO,SEOとAEOを改善
+Powered by,提供:
+Credit usage by site and user,サイト・ユーザー別のクレジット使用量
+See which sites and Workspace members used AI credits during the selected date range.,選択した期間に、どのサイトとメンバーがAIクレジットを使ったかを確認できます。
+"Summary of the Workspace plan, seats, and add-ons within this Workspace.",このワークスペースのプラン・シート・アドオンの概要です。
+Subscription item,サブスクリプション項目
+Workspace plan,ワークスペースプラン
+Site plan subscription summary,サイトプランのサブスクリプション概要
+Summary of all paid site plans within your Workspace.,ワークスペース内のすべての有料サイトプランの概要です。
+Site name,サイト名
+Plan name,プラン名
+Plan status,プランの状態
+Price/frequency,価格/頻度
+Billing start and end dates,請求開始日と終了日
+Latest invoice,最新の請求書
+Download PDF,PDFをダウンロード
+Billing email,請求先メール
+Billing updates will be sent to this email address,請求に関するお知らせがこのアドレスに送信されます
+Company billing profile,会社の請求プロフィール
+"Additional company information to be shown on invoices; e.g. address, PO number, etc.",請求書に表示する会社情報（住所、発注番号など）
+Text notifications when payments fail,支払い失敗時のSMS通知
+Receive text notifications for billing issues,請求の問題をSMSで受け取る
+We'll only notify you about billing issues. We'll never call or share your number.,請求の問題についてのみ通知します。電話をかけたり番号を共有したりすることはありません。
+Additional billing info,追加の請求情報
+Tax ID,税番号
+Businesses with a valid Tax ID will not be subject to tax on their Webflow subscription purchases.,有効な税番号を持つ事業者は、Webflowのサブスクリプション購入に税金がかかりません。
+Sales tax exemption,売上税の免除
+Learn how to update your sales tax exemption details,売上税免除の情報を更新する方法
+Balances,残高
+"When possible, we will use any available balance before using your active card.",可能な場合は、カードより先に利用可能な残高を使います。
+Account balance,アカウント残高
+All invoices,すべての請求書
+Find invoices for your Workspace plan and all Site plans within this Workspace,ワークスペースプランとすべてのサイトプランの請求書を確認できます
+Invoice date,請求日
+Invoice detail,請求内容
+Next bill summary,次回請求の概要
+See detail for the next subscription to be billed for site or Workspace plans in your Workspace.,次に請求されるサイトプラン・ワークスペースプランの詳細を確認できます。
+Date / Invoice number,日付 / 請求書番号
+Invoice items,請求項目
+Invoice subtotal,小計
+Available credit to be applied,適用されるクレジット
+Invoice total,請求合計
+Invoice billing date,請求日
+"All prices, items, discounts, and totals are in",価格・項目・割引・合計の通貨:
+Add client,クライアントを追加
+Main contact,主な連絡先
+Last payment,最終支払い
+Total spend,支払い総額
+Valid,有効
+Email & Notifications,メールと通知
+Upload images up to 256x256 px. Your avatar shows up in your public profile and your team notifications.,256x256pxまでの画像をアップロードできます。アバターは公開プロフィールやチームの通知に表示されます。
+Account info,アカウント情報
+This information will be visible on your public profile.,この情報は公開プロフィールに表示されます。
+"Displayed on your personal account, emails communications, notifications, and other places.",個人アカウント、メール、通知などに表示されます。
+Account details,アカウントの詳細
+Account created,アカウント作成日
+Your account will be permanently deleted within 48 hours. Want to downgrade instead?,アカウントは48時間以内に完全に削除されます。代わりにダウングレードしますか？
+Manage workspace plan.,ワークスペースプランを管理
+Request account deletion,アカウントの削除をリクエスト
+Instructions,インストラクション
+Layouts,レイアウト
+Structure,構造
+Box,ボックス
+Page Slot,ページスロット
+Text Block,テキストブロック
+Media,メディア
+Spline Scene,Splineシーン
+File Upload,ファイルアップロード
+Form Button,フォームボタン
+Advanced,詳細
+Popover,ポップオーバー
+Custom Element,カスタム要素
+Code Component,コードコンポーネント
+Locales List,ロケールリスト
+Code Block,コードブロック
+Static page templates,静的ページテンプレート
+CMS collection pages,CMSコレクションページ
+Ecommerce pages,Eコマースページ
+{n} instances,{n}個のインスタンス
+{n} instance,{n}個のインスタンス
+Component Preview,コンポーネントのプレビュー
+Search styles,スタイルを検索
+Action presets,アクションプリセット
+Only showing interactions created with GSAP,GSAPで作成したインタラクションのみ表示中
+No actions,アクションなし
+{n} actions,{n}個のアクション
+{n} action,{n}個のアクション
+Search interactions,インタラクションを検索
+Search action presets,アクションプリセットを検索
+All assets,すべてのアセット
+Newest first,新しい順
+Site resources,サイトリソース
+Installed on,インストール先
+{n} components,{n}個のコンポーネント
+{n} component,{n}個のコンポーネント
+{n} code components,{n}個のコードコンポーネント
+{n} code component,{n}個のコードコンポーネント
+{n} variables,{n}個の変数
+{n} tag styles,{n}個のタグスタイル
+{n} assets,{n}個のアセット
+{n} fonts,{n}個のフォント
+Share updates,更新を共有
+Available to install,インストール可能
+Shared libraries cannot be installed on a library source site.,共有ライブラリは、ライブラリの元サイトにはインストールできません。
+Skills,スキル
+No skills yet,スキルはまだありません
+Create your first skill to give AI the context it needs to do its best work.,最初のスキルを作成して、AIが力を発揮するのに必要なコンテキストを与えましょう。
+Rules,ルール
+No rules yet,ルールはまだありません
+"Rules set boundaries AI should always respect, like consistent formatting or scope limitations.",ルールは、書式の統一や範囲の制限など、AIが常に守るべき境界を定めます。
+Create a skill,スキルを作成
+Provide agents with guidance on how to do specific tasks,特定の作業の進め方をエージェントに示します
+Learn more about instructions,インストラクションについて詳しく
+Autogenerate skills,スキルを自動生成
+Brand Guidelines,ブランドガイドライン
+"Write and edit content using our brand voice, tone, and messaging guidelines.",ブランドのボイス・トーン・メッセージのガイドラインに沿ってコンテンツを作成・編集します。
+Design System,デザインシステム
+"Use components, colors, and spacing from our shared library",共有ライブラリのコンポーネント・色・余白を使います
+Asset Guidelines,アセットガイドライン
+Generate on-brand assets and messaging with customer logos,顧客ロゴを使い、ブランドに沿ったアセットとメッセージを生成します
+CMS Guidelines,CMSガイドライン
+Create consistent content for a CMS collection.,CMSコレクション用に一貫したコンテンツを作成します。
+Generate,生成
+Import skill,スキルをインポート
+Blank skill,空のスキル
+App installed,アプリをインストールしました
+Open Marketplace,マーケットプレイスを開く
+Search and install Apps,アプリを検索してインストール
+Locales,ロケール
+Visitor routing,訪問者のルーティング
+URL routing,URLルーティング
+AI Translation settings,AI翻訳設定
+Target languages,翻訳先の言語
+Exclusion rules,除外ルール
+Glossary,用語集
+Localize plan usage,Localizeプランの使用量
+AI translation usage,AI翻訳の使用量
+Code dependencies,コードの依存関係
+Interface,インターフェース
+Global style components,グローバルスタイルコンポーネント
+Active global style components,有効なグローバルスタイルコンポーネント
+This site is currently on the,このサイトの現在のプラン:
+site plan.,サイトプラン
+You can now get AI-powered help right here as you build in Webflow. Ask a question or click on an option below.,Webflowで作業しながら、ここでAIのサポートを受けられます。質問するか、下のオプションをクリックしてください。
+How do I align text in the center?,テキストを中央揃えにするには？
+How can I make a three column layout?,3カラムのレイアウトを作るには？
+More learning resources,その他の学習リソース
+How can I change the background of this section?,このセクションの背景を変更するには？
+For AI code components only,AIコードコンポーネント専用
+This panel shows the npm packages available to your AI code components.,AIコードコンポーネントで使えるnpmパッケージを表示します。
+Learn more about code dependencies,コードの依存関係について詳しく
+New dependency,依存関係を追加
+Enable GSAP animation library,GSAPアニメーションライブラリを有効にする
+For developers using custom GSAP code. Not required for Webflow's built-in interactions features.,独自のGSAPコードを使う開発者向けです。Webflow標準のインタラクション機能には不要です。
+Learn more about using GSAP,GSAPの使い方について詳しく
+GSAP Core is included on this site,このサイトにはGSAP Coreが含まれています
+GSAP Plugins,GSAPプラグイン
+Learn more about GSAP plugins,GSAPプラグインについて詳しく
+Popular,人気
+Smooth layout transitions,レイアウトをなめらかに遷移
+Scroll-based animations,スクロール連動アニメーション
+"Split text into characters, words, and/or lines",テキストを文字・単語・行に分割
+Make elements draggable,要素をドラッグ可能にする
+Animate SVG strokes,SVGの線をアニメーション
+Smooth movement with momentum,慣性のあるなめらかな動き
+Morph between SVG shapes,SVGの形状を変形
+Animate along complex paths,複雑なパスに沿ってアニメーション
+Visual path editing,パスを視覚的に編集
+"React to user events (scroll, pointer, touch, wheel)",ユーザー操作（スクロール・ポインター・タッチ・ホイール）に反応
+Simple physics simulation for x/y movement,x/y方向の簡易物理シミュレーション
+Simple physics simulation for arbitrary properties,任意のプロパティの簡易物理シミュレーション
+Randomized text transition effects,ランダムなテキスト切り替え効果
+Smooth scrolling experience,なめらかなスクロール
+Animate scrolling to positions,指定位置へのスクロールをアニメーション
+Animate text content,テキスト内容をアニメーション
+Eases,イージング
+Create any easing curve imaginable,自由なイージングカーブを作成
+"Set the bounce, squash, and stretch. Requires CustomEase",バウンド・つぶれ・伸びを設定（CustomEaseが必要）
+Set a wiggle amount and type. Requires CustomEase,揺れの量と種類を設定（CustomEaseが必要）
+"Rough, expoScale, and slow eases",Rough・expoScale・slowのイージング
+Color themes moved to the top-left,カラーテーマは左上に移動しました
+menu,メニュー
+You can change your system's color theme from there.,そこからカラーテーマを変更できます。
+Open theme settings,テーマ設定を開く
+Show primary page names in secondary locales,セカンダリロケールでメインのページ名を表示
+Getting started,はじめに
+Search Index,検索インデックス
+Webflow automatically indexes the content of your published site to create an up-to-date search index.,Webflowは公開サイトのコンテンツを自動でインデックスし、最新の検索インデックスを作成します。
+Last index,最終インデックス
+Automatic reindexing,自動再インデックス
+Manual indexing,手動インデックス
+once an hour,1時間に1回
+Publish any recent changes before indexing so they appear in search results.,最近の変更を検索結果に反映するには、インデックスの前に公開してください。
+Index now,今すぐインデックス
+Learn more about indexing in the site search guide.,サイト内検索ガイドでインデックスについて詳しく確認できます。
+View guide,ガイドを見る
+selectors,セレクタ
+"{n} on this page, {n2} on other pages.",このページに{n}件、他のページに{n2}件
+Align Y,Y方向の揃え
+Direction,方向
+Breaking,改行
+Word,単語
+"Search for color tokens using name or hex value, or set a color.",名前や16進数値でカラートークンを検索するか、色を設定します。
+Set a color,色を設定
+Visibility,表示
+Attributes,属性
+Keep in HTML when hidden,非表示でもHTMLに残す
+Exclude {s}'s content from site search results,{s}の内容をサイト内検索の結果から除外
+For in-page linking,ページ内リンク用
+Bring your site to life,サイトに動きを
+Add animations and interactive behaviors to any element.,あらゆる要素にアニメーションやインタラクションを追加できます。
+Powered by GSAP,GSAP搭載
+Trigger on...,トリガー…
+Mouse move,マウス移動
+Custom event,カスタムイベント
+Popover toggle,ポップオーバーの切り替え
+Modal toggle,モーダルの切り替え
+Interactions with GSAP (new),GSAPインタラクション（新）
+Add an action...,アクションを追加…
+Unpublish domain,ドメインを非公開
+issue,件の問題
+issues,件の問題
+to improve on this page,（このページで改善可能）
+New item,新しいアイテム
+Modified,更新日
+Not Published,未公開
+Scheduled for {x},{x}に公開予定
+Changes in draft,下書きに変更あり
+Showing,表示中
+Analyze,分析
+Get started with Analyze,Analyzeを始める
+Insights where you build,作業する場所でインサイトを

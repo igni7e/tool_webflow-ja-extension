@@ -120,6 +120,15 @@
     "code",
     "pre",
 
+    // Designer のユーザー定義名（Webflow のクラス名はハッシュ化されているため data 属性で判定）
+    '[data-automation-id="left-sidebar-pages-list"] [data-automation-id="list-cell"]',
+    '[data-automation-id="cms-collections-list"] [data-sc*="RowItemTitle"]',
+    '[data-automation-id="collection-row"]',
+    '[data-automation-id="default-collection-row"]',
+    '[data-automation-id*="style-rule-token"]',
+    '[data-automation-id^="selected-node-title"]',
+    '[data-automation-id="outline-selected-node"]',
+
     // Webflow特有のUI要素名表示
     '[data-automation-id*="name"]',
     '[data-automation-id*="label"]',
@@ -186,8 +195,17 @@
     '[class*="SymbolItem"]',
   ];
 
+  // ダッシュボードのサイトカード・フォルダ（先頭のテキストがユーザーの付けた名前）
+  const NAMED_ITEM_SELECTOR =
+    '[data-automation-id$="-site-item"], [data-automation-id="folder-item"]';
+
   // セレクタを結合して closest() で一度にマッチできるようにする
   const SKIP_SELECTOR_COMBINED = SKIP_SELECTORS.join(",");
+
+  // 属性翻訳用: 入力欄そのものは除外しない（placeholder を訳すため）
+  const ATTR_SKIP_SELECTOR_COMBINED = SKIP_SELECTORS.filter(
+    (sel) => sel !== "input" && sel !== "textarea"
+  ).join(",");
 
   // 単位語 → 日本語の対応（「○○前」系の動的文字列で使用）
   const AGO_UNITS = {
@@ -230,6 +248,8 @@
     UNTRANSLATED_PREFIX,
     SKIP_SELECTORS,
     SKIP_SELECTOR_COMBINED,
+    ATTR_SKIP_SELECTOR_COMBINED,
+    NAMED_ITEM_SELECTOR,
     AGO_UNITS,
     TRANSLATION_PATTERNS,
   };
